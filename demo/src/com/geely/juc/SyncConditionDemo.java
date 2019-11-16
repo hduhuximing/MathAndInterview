@@ -1,5 +1,7 @@
 package com.geely.juc;
 
+import org.omg.SendingContext.RunTime;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -21,26 +23,28 @@ public class SyncConditionDemo {
      * 来十轮
      */
     public static void main(String[] args) {
-        ShareData shareData = new ShareData();
-
-        new Thread(() -> {
-            for (int i = 1; i <= 10; i++) {
-                shareData.print5();
-            }
-        }, "A").start();
-
-        new Thread(() -> {
-            for (int i = 1; i <= 10; i++) {
-                shareData.print10();
-            }
-        }, "B").start();
-
-        new Thread(() -> {
-            for (int i = 1; i <= 10; i++) {
-                shareData.print15();
-            }
-        }, "C").start();
+        System.out.println(Runtime.getRuntime().availableProcessors());
     }
+//        ShareData shareData = new ShareData();
+//
+//        new Thread(() -> {
+//            for (int i = 1; i <= 10; i++) {
+//                shareData.print5();
+//            }
+//        }, "A").start();
+//
+//        new Thread(() -> {
+//            for (int i = 1; i <= 10; i++) {
+//                shareData.print10();
+//            }
+//        }, "B").start();
+//
+//        new Thread(() -> {
+//            for (int i = 1; i <= 10; i++) {
+//                shareData.print15();
+//            }
+//        }, "C").start();
+//    }
 }
 
 class ShareData {
