@@ -1,6 +1,5 @@
 package com.geely.juc;
 
-import org.omg.SendingContext.RunTime;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
