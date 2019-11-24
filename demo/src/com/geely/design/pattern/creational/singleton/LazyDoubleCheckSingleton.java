@@ -4,6 +4,7 @@ package com.geely.design.pattern.creational.singleton;
  * Created by geely
  */
 public class LazyDoubleCheckSingleton {
+    //防止指令重排
     private volatile static LazyDoubleCheckSingleton lazyDoubleCheckSingleton = null;
 
     private LazyDoubleCheckSingleton() {

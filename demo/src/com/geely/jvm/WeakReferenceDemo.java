@@ -11,6 +11,8 @@ import java.lang.ref.WeakReference;
 public class WeakReferenceDemo {
 
 
+
+
     public static void main(String[] args) {
         Object o1 = new Object();
         WeakReference<Object> weak = new WeakReference<>(o1);

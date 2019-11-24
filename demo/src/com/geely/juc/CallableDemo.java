@@ -12,17 +12,26 @@ import java.util.concurrent.TimeUnit;
  */
 public class CallableDemo {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        FutureTask<Integer> futureTask = new FutureTask<>(new MyThread2());
-        new Thread(futureTask, "aaa").start();
-        int b=0;
-        while (futureTask.isDone()) {
-            b = futureTask.get();
-        }
-        System.out.println(b);
+        String name = MyThread.name;
+        System.out.println(name);
+//        FutureTask<Integer> futureTask = new FutureTask<>(new MyThread2());
+//        new Thread(futureTask, "aaa").start();
+//        int b=0;
+//        while (futureTask.isDone()) {
+//            b = futureTask.get();
+//        }
+//        System.out.println(b);
     }
 }
 
 class MyThread implements Runnable {
+    public static String name="xiaiming";
+    static{
+        System.out.println("静态代码块初始化");
+    }
+    public MyThread(){
+        System.out.println("构造函数初始化了");
+    }
     @Override
     public void run() {
     }

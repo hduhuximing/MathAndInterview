@@ -2,9 +2,10 @@ package com.geely.design.pattern.creational.singleton;
 
 /**
  * Created by geely
+ * 枚举类型直接创建，底层就是单利创建
  */
 public enum EnumInstance {
-    INSTANCE {
+    INSTANCE("实例化") {
         protected void printTest() {
             System.out.println("Geely Print Test");
         }
@@ -17,6 +18,10 @@ public enum EnumInstance {
         return INSTANCE;
     }
 
+
+    EnumInstance(Object obj) {
+        this.data = obj;
+    }
 
     private Object data;
 

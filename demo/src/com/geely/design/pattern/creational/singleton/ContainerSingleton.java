@@ -14,7 +14,7 @@ public class ContainerSingleton {
 
     }
 
-    private static Map<String, Object> singletonMap = new HashMap<String, Object>();
+    private static Map<String, Object> singletonMap = new HashMap<>();
 
     public static void putInstance(String key, Object instance) {
         if (StringUtils.isNotBlank(key) && instance != null) {
