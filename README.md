@@ -1,1 +1,27 @@
 # learn java 
+# 十大经典排序算法
+![JDK](https://img.shields.io/badge/JDK-1.8-green.svg)
+![Maven](https://img.shields.io/badge/Maven-3.3.1-green.svg)
+[![license](https://img.shields.io/badge/license-GPL%20v3-yellow.svg)](https://gitee.com/yadong.zhang/DBlog/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/hustcc/JS-Sorting-Algorithm.svg?branch=master)](https://travis-ci.org/hustcc/JS-Sorting-Algorithm)
+
+排序算法是《数据结构与算法》中最基本的算法之一。
+
+排序算法可以分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，
+一次不能容纳全部的排序记录，在排序过程中需要访问外存。常见的内部排序算法有：
+**插入排序、希尔排序、选择排序、冒泡排序、归并排序、快速排序、堆排序、基数排序**等。用一张图概括：
+
+![sort](/Users/huximing/IdeaProjects/MathAndInterview/README.assets/sort.png)
+
+[一.排序算法](/demo/src/commonSort)
+
+- [冒泡排序](./sortDoc/1.bubbleSort.md)
+- [选择排序](./sortDoc/2.selectionSort.md)
+- [插入排序](./sortDoc/3.insertionSort.md)
+- [希尔排序](./sortDoc/4.shellSort.md)
+- [归并排序](./sortDoc/5.mergeSort.md)
+- [快速排序](./sortDoc/6.quickSort.md)
+- [堆排序](./sortDoc/7.heapSort.md)
+- [计数排序](./sortDoc/8.countingSort.md)
+- [桶排序](./sortDoc/9.bucketSort.md)
+- [基数排序](./sortDoc/10.radixSort.md)

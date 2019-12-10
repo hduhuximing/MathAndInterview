@@ -1,9 +1,9 @@
-package demo4;
+package commonSort;
 
 import java.util.Arrays;
 
 public class RadixSort {
-
+	//桶排序
 	public static void main(String[] args) {
 		int[] arr = new int[] {23,6,189,45,9,287,56,1,798,34,65,652,5};
 		radixSort(arr);

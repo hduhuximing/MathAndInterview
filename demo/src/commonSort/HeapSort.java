@@ -1,4 +1,4 @@
-package demo4;
+package commonSort;
 
 import java.util.Arrays;
 

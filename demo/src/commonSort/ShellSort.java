@@ -1,9 +1,9 @@
-package demo4;
+package commonSort;
 
 import java.util.Arrays;
 
 public class ShellSort {
-
+//希尔排序
 	public static void main(String[] args) {
 		int[] arr = new int[] { 3, 5, 2, 7, 8, 1, 2, 0, 4, 7, 4, 3, 8 };
 		System.out.println(Arrays.toString(arr));
