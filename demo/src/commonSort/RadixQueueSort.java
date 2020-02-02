@@ -5,7 +5,7 @@ import java.util.Arrays;
 import demo2.MyQueue;
 
 public class RadixQueueSort {
-
+	//基数排序
 	public static void main(String[] args) {
 		int[] arr = new int[] {23,6,189,45,9,287,56,1,798,34,65,652,5};
 		radixSort(arr);
@@ -13,7 +13,7 @@ public class RadixQueueSort {
 	}
 	
 	public static void  radixSort(int[] arr) {
-		//存最数组中最大的数字
+		//存数组中最大的数字
 		int max=Integer.MIN_VALUE;
 		for(int i=0;i<arr.length;i++) {
 			if(arr[i]>max) {
