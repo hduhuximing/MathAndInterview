@@ -20,9 +20,8 @@ class TreeNode {
 
 public class leetcode95 {
     public List<TreeNode> generateTrees(int n) {
-
         if (n == 0) {
-            return new ArrayList<TreeNode>();
+            return new ArrayList<>();
         }
         return generateTree(1, n);
     }

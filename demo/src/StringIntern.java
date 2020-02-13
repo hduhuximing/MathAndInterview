@@ -20,12 +20,13 @@ public class StringIntern {
 // 如果没有，JDK1.7之前（不包含1.7）的处理方式是在常量池中创建与此 String 内容相同的字符串，
 // 并返回常量池中创建的字符串的引用，
 // JDK1.7以及之后的处理方式是在常量池中记录此字符串的引用，并返回该引用
-        String s=new String("a")+new String("b");
-        String x="ab";
-        String s2=s.intern();
+        String s = new String("a") + new String("b");
+//        String x = "ab";
+        String s2 = s.intern();
+        String x = "ab";
 //        String x="ab";
-        System.out.println(s2==x);
-        System.out.println(s==x);
+        System.out.println(s2 == x);
+        System.out.println(s == x);
     }
 }
 

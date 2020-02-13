@@ -14,7 +14,6 @@ public class ThreadLocalInstance {
     };
 
     private ThreadLocalInstance() {
-
     }
 
     public static ThreadLocalInstance getInstance() {
