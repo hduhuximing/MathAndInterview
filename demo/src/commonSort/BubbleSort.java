@@ -27,7 +27,7 @@ public class BubbleSort {
             boolean flag = true;
 
             //控制比较的次数
-            for (int j = 0; j < arr.length - 1 - i; j++) {
+            for (int j = 0; j <=arr.length - 2 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -35,7 +35,7 @@ public class BubbleSort {
                     flag = false;
                 }
             }
-
+            //有序直接跳出结束
             if (flag) {
                 break;
             }

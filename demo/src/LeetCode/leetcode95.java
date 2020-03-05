@@ -8,17 +8,19 @@ import java.util.List;
  * @version 1.0
  * @date 2020/1/30 7:45 下午
  */
-class TreeNode {
-    TreeNode left;
-    TreeNode right;
-    int val;
 
-    public TreeNode(int val) {
-        this.val = val;
-    }
-}
 
 public class leetcode95 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     public List<TreeNode> generateTrees(int n) {
         if (n == 0) {
             return new ArrayList<>();

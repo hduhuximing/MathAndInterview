@@ -7,6 +7,15 @@ package LeetCode;
  * @description
  */
 public class leetcode236 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null && root == p || root == q) {
             return root;

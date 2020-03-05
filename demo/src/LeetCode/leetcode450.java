@@ -7,6 +7,15 @@ package LeetCode;
  * @description
  */
 public class leetcode450 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) return null;
         if (root.val == key) {

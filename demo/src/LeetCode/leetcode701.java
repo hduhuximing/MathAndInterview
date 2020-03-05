@@ -22,6 +22,15 @@ package LeetCode;
  * 1   3 5
  */
 public class leetcode701 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
     public TreeNode insertIntoBST(TreeNode root, int val) {
         //root为当前位置，如果是空的就可以插入，否则需要向下继续遍历
         if (root == null) {

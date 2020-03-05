@@ -18,12 +18,10 @@ public enum EnumInstance {
         return INSTANCE;
     }
 
-
+    private Object data;
     EnumInstance(Object obj) {
         this.data = obj;
     }
-
-    private Object data;
 
     public Object getData() {
         return data;

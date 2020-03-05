@@ -7,6 +7,15 @@ package LeetCode;
  * @description
  */
 public class leetcode222 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
     public int countNodes(TreeNode root) {
         if (root == null) {
             return 0;

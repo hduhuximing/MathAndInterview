@@ -7,6 +7,15 @@ package LeetCode;
  * @description
  */
 public class leetcode129 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
     private int res = 0;
     public int sumNumbers(TreeNode root) {
         if (root == null) {

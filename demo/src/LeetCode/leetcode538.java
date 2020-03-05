@@ -7,6 +7,15 @@ package LeetCode;
  * @description
  */
 public class leetcode538 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
 //    int sum=0;
     public TreeNode convertBST(TreeNode root) {
         if(root==null){

@@ -22,13 +22,11 @@ public class InsertSort {
             if (arr[i] < arr[i - 1]) {
                 int temp = arr[i];
                 int j;
-
                 for (j = i; j > 0; j--) {
                     if (temp < arr[j - 1]) {
                         arr[j] = arr[j - 1];
                     }
                 }
-
                 arr[j] = temp;
             }
 

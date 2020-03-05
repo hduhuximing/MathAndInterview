@@ -7,6 +7,15 @@ package LeetCode;
  * @description
  */
 public class leetcode124 {
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
     private int res = Integer.MIN_VALUE;
 
     public int maxPathSum(TreeNode root) {
