@@ -1,7 +1,5 @@
 package LeetCode;
 
-import java.util.Stack;
-
 /**
  * @author ming
  * @version 1.0
@@ -10,17 +8,27 @@ import java.util.Stack;
  */
 public class leetcode3 {
     public int lengthOfLongestSubstring(String s) {
-        int i = 0;
-        int j = 0;
-        int max = 0;
-        int[] ch = new int[256];
+        int i = 0, j = 0, max = 0;
+        int[] res = new int[256];
         while (j < s.length()) {
-            //获取当前最左边的值，左边的需要用当前的数据进行查询
-            //每次用当期的位置，更新之前的数据。
-            i = Math.max(i, s.charAt(j));
+            i = Math.max(res[s.charAt(i)], i);
             max = Math.max(max, j - i + 1);
-            ch[s.charAt(j)] = ++j;
+            res[s.charAt(j)] = ++j;
         }
         return max;
+
+
+//        int i = 0;
+//        int j = 0;
+//        int max = 0;
+//        int[] ch = new int[256];
+//        while (j < s.length()) {
+//            //获取当前最左边的值，左边的需要用当前的数据进行查询
+//            //每次用当期的位置，更新之前的数据。
+//            i = Math.max(i, s.charAt(j));
+//            max = Math.max(max, j - i + 1);
+//            ch[s.charAt(j)] = ++j;
+//        }
+//        return max;
     }
 }

@@ -20,6 +20,11 @@ import java.util.Arrays;
  */
 public class leetcode300 {
     public int lengthOfLIS(int[] nums) {
+        //判断是不是空
+        //声明dp,当前位置最大的上升数
+        //从头开始循环，每一个值初始值都是1
+        //从头到当前位置前一位，看是不是比当前值小，小就更新dp[i]=Math.max(dp[i],dp[j]+1);
+        //每次取max进行比较，得到最大的
         if (nums == null || nums.length == 0) {
             return 0;
         }
