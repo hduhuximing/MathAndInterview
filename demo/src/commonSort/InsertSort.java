@@ -1,7 +1,8 @@
 package commonSort;
 
-import java.net.BindException;
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * 平均时间复杂度 O(n^2)
@@ -10,14 +11,26 @@ public class InsertSort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{5, 3, 2, 8, 5, 9, 1, 0};
+//        int[][] aa = new int[][];
+//
+//        Arrays.sort(aa, new Comparator<int[]>() {
+//            @Override
+//            public int compare(int[] o1, int[] o2) {
+//                return o1[0] - o2[0];
+//            }
+//        })
 //        insertSort(arr);
+
+
+
         sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
     //插入排序
     public static void insertSort(int[] arr) {
-        //遍历所有的数字
+        //遍历所有的数字前一个大
+        //取当前值，如果当前比前一个小，直接将当前保存，前面的向后走一步
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] < arr[i - 1]) {
                 int temp = arr[i];
@@ -29,7 +42,6 @@ public class InsertSort {
                 }
                 arr[j] = temp;
             }
-
         }
     }
 

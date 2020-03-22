@@ -6,12 +6,12 @@ package com.geely.design.pattern.creational.singleton;
  */
 public enum EnumInstance {
     INSTANCE("实例化") {
-        protected void printTest() {
-            System.out.println("Geely Print Test");
-        }
+//        protected void printTest() {
+//            System.out.println("Geely Print Test");
+//        }
     };
 
-    protected abstract void printTest();
+//    protected abstract void printTest();
 
 
     public static EnumInstance getInstance() {
@@ -19,6 +19,7 @@ public enum EnumInstance {
     }
 
     private Object data;
+
     EnumInstance(Object obj) {
         this.data = obj;
     }

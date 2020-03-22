@@ -8,17 +8,18 @@ package LeetCode;
  */
 public class leetcode132 {
     public int minCut(String s) {
-        char[] chars = s.toCharArray();
-        //dp[i] i个数
-        int[] dp = new int[s.length() + 1];
-        for (int i = 0; i < dp.length; i++) {
-            dp[i] = i - 1;
+        char[]chars=s.toCharArray();
+        //i个数的分割数
+        int[] dp=new int[s.length()+1];
+        for (int i = 0; i <=s.length() ; i++) {
+            dp[i]=i-1;
         }
-        for (int j = 0; j < chars.length; j++) {
-            help(chars, j, j, dp);
-            help(chars, j, j + 1, dp);
+        for(int i=0;i<s.length();i++){
+            help(chars,i,i,dp);
+            help(chars,i,i+1,dp);
         }
         return dp[s.length()];
+
     }
 
     private void help(char[] chars, int i, int j, int[] dp) {

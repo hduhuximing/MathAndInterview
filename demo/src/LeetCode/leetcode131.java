@@ -16,6 +16,7 @@ public class leetcode131 {
         if (s == null || s.length() == 0) {
             return res;
         }
+
         //dp[i][j]从i到j是否可以回文
         int[][] dp = new int[s.length()][s.length()];
         for (int i = 1; i < s.length(); i++) {

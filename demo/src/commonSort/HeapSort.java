@@ -3,7 +3,7 @@ package commonSort;
 import java.util.Arrays;
 
 public class HeapSort {
-
+    //大顶堆选出最大的值，与最后的一个数交换，再次转为大顶堆。
     public static void main(String[] args) {
         int[] arr = new int[]{9, 6, 8, 7, 0, 1, 10, 4, 2};
 //        heapSort(arr);
@@ -12,7 +12,9 @@ public class HeapSort {
     }
 
     public static void heSort(int[] arr) {
+        //找到第一个父节点，大顶堆
 		for(int i=(arr.length-1)/2;i>=0;i--){
+		    //从i节点向下比较
 			maxhe(arr,arr.length,i);
 		}
 		for(int i=arr.length-1;i>0;i--){
@@ -26,6 +28,7 @@ public class HeapSort {
 	private static void maxhe(int[] arr, int length, int i) {
 		int left=i*2+1;
 		int right=i*2+2;
+		//缓存最大值
 		int max=i;
 		if(left<length&&arr[left]>arr[max]){
 			max=left;
@@ -44,7 +47,7 @@ public class HeapSort {
 
 	public static void heapSort(int[] arr) {
         //开始位置是最后一个非叶子节点，即最后一个节点的父节点
-//		int start = (arr.length-1)/2;
+        //int start = (arr.length-1)/2;
         //调整为大顶堆
         for (int i = (arr.length - 1) / 2; i >= 0; i--) {
             maxHeap(arr, arr.length, i);

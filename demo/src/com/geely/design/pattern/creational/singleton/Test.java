@@ -71,7 +71,9 @@ public class Test {
 
         EnumInstance instance = EnumInstance.getInstance();
         System.out.println(EnumInstance.getInstance()==instance);
-        instance.printTest();
+//        instance.printTest();
+
+        EnumInstance instance1 = EnumInstance.INSTANCE;
 
 
     }

@@ -9,9 +9,16 @@ public class SelectSort {
 //        selectSort(arr);
         seleSort(arr);
         System.out.println(Arrays.toString(arr));
+
+
+        String s="001";
+        Integer integer = Integer.valueOf(s);
+        System.out.println(integer);
+
     }
 
-    //选择排序
+    //选择排序，
+    //每次从当前到后面选出一个最小的位置进行交换。
     public static void selectSort(int[] arr) {
         //遍历所有的数
         for (int i = 0; i <= arr.length - 2; i++) {

@@ -14,13 +14,13 @@ public class leetcode139 {
             return false;
         }
         int len = s.length();
-        boolean[] res = new boolean[len+1];
+        boolean[] res = new boolean[len + 1];
         res[0] = true;
-        for (int i = 0; i <=len; i++) {
+        for (int i = 1; i <= len; i++) {
             for (int j = i - 1; j >= 0; j--) {
-                String curr=s.substring(j,i);
-                if(wordDict.contains(curr)&&res[j]){
-                    res[i]=true;
+                String curr = s.substring(j, i);
+                if (wordDict.contains(curr) && res[j]) {
+                    res[i] = true;
                     break;
                 }
             }

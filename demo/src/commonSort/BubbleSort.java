@@ -1,6 +1,9 @@
 package commonSort;
 
+import com.sun.org.apache.xpath.internal.operations.String;
+
 import java.util.Arrays;
+import java.util.List;
 
 public class BubbleSort {
 
@@ -25,9 +28,8 @@ public class BubbleSort {
         //控制共比较多少轮
         for (int i = 0; i <= arr.length - 2; i++) {
             boolean flag = true;
-
             //控制比较的次数
-            for (int j = 0; j <=arr.length - 2 - i; j++) {
+            for (int j = 0; j <= arr.length - 2 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -39,7 +41,6 @@ public class BubbleSort {
             if (flag) {
                 break;
             }
-
         }
     }
 

@@ -6,12 +6,14 @@ import java.io.Serializable;
  * Created by geely
  */
 public class HungrySingleton implements Serializable, Cloneable {
-
-    private final static HungrySingleton hungrySingleton;
-
-    static {
-        hungrySingleton = new HungrySingleton();
-    }
+      //1
+//    private final static HungrySingleton hungrySingleton;
+//
+//        static {
+//        hungrySingleton = new HungrySingleton();
+//    }
+    //2
+    private final static HungrySingleton hungrySingleton = new HungrySingleton();
 
     private HungrySingleton() {
         if (hungrySingleton != null) {

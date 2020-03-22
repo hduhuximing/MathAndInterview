@@ -2,6 +2,7 @@ package LeetCode;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -30,22 +31,25 @@ import java.util.List;
  */
 public class leetcode438 {
     public static List<Integer> findAnagrams(String s, String p) {
-        if (s == null || s.length() == 0 || p == null || s.length() < p.length()) {
-            return null;
-        }
         List<Integer> list = new ArrayList<>();
+        if (s == null
+                || s.length() == 0
+                || p == null
+                || s.length() < p.length()) {
+            return list;
+        }
         int[] ch = new int[26];
         char[] array = p.toCharArray();
-        for (int i = 0; i < array.length; i++) {
-            ch[array[i] - 'a']++;
+        for (char c : array) {
+            ch[c - 'a']++;
         }
         int start = 0;
         int end = 0;
         int count = p.length();
         //扩充成登于p长度的窗口
         for (; end < p.length(); end++) {
-            ch[array[end] - 'a']--;
-            if (ch[array[end] - 'a'] >= 0) {
+            ch[s.charAt(end) - 'a']--;
+            if (ch[s.charAt(end) - 'a'] >= 0) {
                 count--;
             }
         }
@@ -70,10 +74,55 @@ public class leetcode438 {
                 list.add(start);
         }
         return list;
+//        List<Integer> res = new LinkedList<>();
+//        if (s == null || p == null || s.length() < p.length()){
+//            return res;
+//        }
+//        int[] ch = new int[26];
+//        //统计p串字符个数
+//        for (char c : p.toCharArray()){
+//            ch[c - 'a']++;
+//        }
+//        //把窗口扩成p串的长度
+//        int start = 0, end = 0, rest = p.length();
+//        for (; end < p.length(); end++) {
+//            char temp = s.charAt(end);
+//            ch[temp - 'a']--;
+//            if (ch[temp - 'a'] >= 0){
+//                rest--;
+//            }
+//        }
+//        if (rest == 0){
+//            res.add(0);
+//        }
+//        //开始一步一步向右移动窗口。
+//        for(;end < s.length();end++) {
+//            //左边的拿出来一个
+//            //负数表示原来p中就没有的数据 所以不用++；
+//            //如果大于等于0 表示当前匹配过的数据需要还回去
+//            char temp = s.charAt(start);
+//            if (ch[temp - 'a'] >= 0) {
+//                rest++;
+//            }
+//            ch[temp - 'a']++;
+//            start++;
+//            //右边的拿进来一个
+//            //新进来的数据判断，如果是p中的数据，就--
+//            temp = s.charAt(end);
+//            ch[temp - 'a']--;
+//            //命中
+//            if (ch[temp - 'a'] >= 0) {
+//                rest--;
+//            }
+//            if (rest == 0)
+//                res.add(start);
+//        }
+//        return res;
     }
 
+
     public static void main(String[] args) {
-        List<Integer> anagrams = findAnagrams("cbaebabacd", "abc");
+        List<Integer> anagrams = findAnagrams("aa", "bb");
         System.out.println(anagrams);
     }
 }

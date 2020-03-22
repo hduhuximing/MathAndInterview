@@ -11,6 +11,7 @@ import java.util.Arrays;
 public class CountSort {
     public static void main(String[] args) {
         int[] arr = {2, 10, 4, 6, 8, 3, 5};
+        //获取最大值，生成一个最大值数组。
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
@@ -23,11 +24,13 @@ public class CountSort {
 
     private static int[] sort(int[] arr, int max) {
         int[] result = new int[arr.length];
-        int[] count = new int[max+1];
+        int[] count = new int[max + 1];
         for (int i = 0; i < arr.length; i++) {
             count[arr[i]]++;
         }
-        for (int i = 0, j = 0; i < count.length; i++) {
+        int j = 0;
+        for (int i = 0; i < count.length; i++) {
+            //循环当前位置数，如果大于0 进行插入。
             while (count[i]-- > 0) {
                 result[j++] = i;
             }
