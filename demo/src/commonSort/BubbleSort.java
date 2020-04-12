@@ -3,15 +3,18 @@ package commonSort;
 import com.sun.org.apache.xpath.internal.operations.String;
 
 import java.util.Arrays;
-import java.util.List;
-
+/**
+ * @author ming
+ * @version 1.0
+ * @date 2020/1/16 1:47 下午
+ * @descirption 平均O(n^2) 最好O(n)
+ */
 public class BubbleSort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{5, 7, 2, 9, 4, 1, 0, 5, 7};
         System.out.println(Arrays.toString(arr));
-//        bubbleSort(arr);
-        sort(arr);
+        bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -43,24 +46,4 @@ public class BubbleSort {
             }
         }
     }
-
-    public static void sort(int[] arr) {
-        //整体比较次数
-        for (int i = arr.length - 1; i > 0; i--) {
-            boolean flag = true;
-            //每次都能找到一个最打的放到当前未排序数组的最后一位
-            for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    flag = false;
-                }
-            }
-            if (flag) {
-                break;
-            }
-        }
-    }
-
 }

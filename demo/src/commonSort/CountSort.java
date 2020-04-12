@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @version 1.0
  * @date 2020/1/16 1:47 下午
  */
-//计数排序
+//计数排序 范围性确定的
 public class CountSort {
     public static void main(String[] args) {
         int[] arr = {2, 10, 4, 6, 8, 3, 5};

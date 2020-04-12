@@ -20,7 +20,7 @@ public class xushuichi {
                 } else {
                     int r = new Random().nextInt(i + 1);
                     if (r < m) {
-                        b[r] = b[i];
+                        b[r] = k[i];
                     }
                 }
             }

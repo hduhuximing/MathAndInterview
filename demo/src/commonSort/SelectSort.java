@@ -2,19 +2,18 @@ package commonSort;
 
 import java.util.Arrays;
 
+/**
+ * @author ming
+ * @version 1.0
+ * @date 2020/1/16 1:47 下午
+ * @descirption 选择排序 O(n^2)
+ */
 public class SelectSort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{3, 4, 5, 7, 1, 2, 0, 3, 6, 8};
-//        selectSort(arr);
-        seleSort(arr);
+        selectSort(arr);
         System.out.println(Arrays.toString(arr));
-
-
-        String s="001";
-        Integer integer = Integer.valueOf(s);
-        System.out.println(integer);
-
     }
 
     //选择排序，
@@ -31,27 +30,8 @@ public class SelectSort {
                     minIndex = j;
                 }
             }
-
             //如果最小的数和当前遍历数的下标不一致,说明下标为minIndex的数比当前遍历的数更小。
             if (i != minIndex) {
-                swap(arr, i, minIndex);
-            }
-
-        }
-    }
-
-    public static void seleSort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            int minIndex = i;
-            //找到最小元素位置
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j;
-                }
-            }
-
-            //判断是否需要更新
-            if (minIndex != i) {
                 swap(arr, i, minIndex);
             }
 

@@ -30,26 +30,22 @@ public class leetcode95 {
 
     private List<TreeNode> generateTree(int start, int end) {
         List<TreeNode> cur = new ArrayList<>();
-        //跳出条件
         if (start > end) {
             cur.add(null);
             return cur;
         }
-        //每个位置作为根节点进行拆分
         for (int i = start; i <= end; i++) {
-            List<TreeNode> leftList = generateTree(start, i - 1);
-            List<TreeNode> rightList = generateTree(i + 1, end);
-            //处理左右节点，作为返回
-            for (TreeNode left : leftList) {
-                for (TreeNode right : rightList) {
+            List<TreeNode> left = generateTree(start, i - 1);
+            List<TreeNode> right = generateTree(i + 1, end);
+            for (TreeNode le : left) {
+                for (TreeNode ri : right) {
                     TreeNode root = new TreeNode(i);
-                    root.left = left;
-                    root.right = right;
+                    root.left = le;
+                    root.right = ri;
                     cur.add(root);
                 }
             }
         }
-
         return cur;
     }
 }

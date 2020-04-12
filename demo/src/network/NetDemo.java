@@ -1,5 +1,8 @@
 package network;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author ming
  * @version 1.0
@@ -24,6 +27,30 @@ public class NetDemo {
         System.out.println(sb2.toString());
         return sb1.toString().equals(sb2.toString());
     }
+
+    public int sumFourDivisors(int[] nums) {
+        int count = 0;
+        outer:
+        for (int j = 0; j < nums.length; j++) {
+            Set<Integer> set = new HashSet<>();
+            for (int i = 1; i <=(int) Math.sqrt(nums[j]); i++) {
+                if (nums[j] % i == 0) {
+                    set.add(i);
+                    set.add(nums[j] / i);
+                    if (set.size() > 4) {
+                        continue outer;
+                    }
+                }
+            }
+            if (set.size() == 4) {
+                for (int cur : set) {
+                    count += cur;
+                }
+            }
+        }
+        return count;
+    }
+
 
     public static void main(String[] args) {
         String ip1 = "192.168.1.3";

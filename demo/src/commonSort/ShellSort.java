@@ -10,8 +10,8 @@ public class ShellSort {
     public static void main(String[] args) {
         int[] arr = new int[]{3, 5, 2, 7, 8, 1, 2, 0, 4, 7, 4, 3, 8};
         System.out.println(Arrays.toString(arr));
-//        shellSort(arr);
-        shaSort(arr);
+        shellSort(arr);
+//        shaSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -34,7 +34,6 @@ public class ShellSort {
             k++;
         }
     }
-
     private static void swap1(int[] arr, int j, int i2) {
         int temp = arr[j];
         arr[j] = arr[i2];

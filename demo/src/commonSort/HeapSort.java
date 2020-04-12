@@ -1,51 +1,68 @@
 package commonSort;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class HeapSort {
     //大顶堆选出最大的值，与最后的一个数交换，再次转为大顶堆。
     public static void main(String[] args) {
-        int[] arr = new int[]{9, 6, 8, 7, 0, 1, 10, 4, 2};
-//        heapSort(arr);
-		heSort(arr);
-        System.out.println(Arrays.toString(arr));
+//        int[] arr = new int[]{9, 6, 8, 7, 0, 1, 10, 4, 2};
+////        heapSort(arr);
+//        heSort(arr);
+//        System.out.println(Arrays.toString(arr));
+
+
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        String[] sp = s.split("\\.");
+        if (sp.length == 1) {
+            System.out.println(s);
+        } else {
+            String s1 = sp[1];
+            if (s1.charAt(0) >= '5') {
+                System.out.println(Integer.parseInt(sp[0]) + 1);
+            } else {
+                System.out.println(Integer.parseInt(sp[0]));
+            }
+        }
+
     }
 
     public static void heSort(int[] arr) {
         //找到第一个父节点，大顶堆
-		for(int i=(arr.length-1)/2;i>=0;i--){
-		    //从i节点向下比较
-			maxhe(arr,arr.length,i);
-		}
-		for(int i=arr.length-1;i>0;i--){
-			int temp=arr[i];
-			arr[i]=arr[0];
-			arr[0]=temp;
-			maxhe(arr,i,0);
-		}
+        for (int i = (arr.length - 1) / 2; i >= 0; i--) {
+            //从i节点向下比较
+            maxhe(arr, arr.length, i);
+        }
+        for (int i = arr.length - 1; i > 0; i--) {
+            int temp = arr[i];
+            arr[i] = arr[0];
+            arr[0] = temp;
+            maxhe(arr, i, 0);
+        }
     }
 
-	private static void maxhe(int[] arr, int length, int i) {
-		int left=i*2+1;
-		int right=i*2+2;
-		//缓存最大值
-		int max=i;
-		if(left<length&&arr[left]>arr[max]){
-			max=left;
-		}
-		if(right<length&&arr[right]>arr[max]){
-			max=right;
-		}
-		if(max!=i){
-			int temp=arr[max];
-			arr[max]=arr[i];
-			arr[i]=temp;
-			maxhe(arr,length,max);
-		}
+    private static void maxhe(int[] arr, int length, int i) {
+        int left = i * 2 + 1;
+        int right = i * 2 + 2;
+        //缓存最大值
+        int max = i;
+        if (left < length && arr[left] > arr[max]) {
+            max = left;
+        }
+        if (right < length && arr[right] > arr[max]) {
+            max = right;
+        }
+        if (max != i) {
+            int temp = arr[max];
+            arr[max] = arr[i];
+            arr[i] = temp;
+            maxhe(arr, length, max);
+        }
     }
 
 
-	public static void heapSort(int[] arr) {
+    public static void heapSort(int[] arr) {
         //开始位置是最后一个非叶子节点，即最后一个节点的父节点
         //int start = (arr.length-1)/2;
         //调整为大顶堆
