@@ -6,26 +6,10 @@ import java.util.Scanner;
 public class HeapSort {
     //大顶堆选出最大的值，与最后的一个数交换，再次转为大顶堆。
     public static void main(String[] args) {
-//        int[] arr = new int[]{9, 6, 8, 7, 0, 1, 10, 4, 2};
-////        heapSort(arr);
-//        heSort(arr);
-//        System.out.println(Arrays.toString(arr));
-
-
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        String[] sp = s.split("\\.");
-        if (sp.length == 1) {
-            System.out.println(s);
-        } else {
-            String s1 = sp[1];
-            if (s1.charAt(0) >= '5') {
-                System.out.println(Integer.parseInt(sp[0]) + 1);
-            } else {
-                System.out.println(Integer.parseInt(sp[0]));
-            }
-        }
-
+        int[] arr = new int[]{9, 6, 8, 7, 0, 1, 10, 4, 2};
+//        heapSort(arr);
+        heSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void heSort(int[] arr) {

@@ -1,7 +1,8 @@
 package commonSort;
 
 import java.util.Arrays;
-import java.util.concurrent.Semaphore;
+
+import static cn.hutool.core.util.ArrayUtil.swap;
 
 public class QuickSort {
 
@@ -15,6 +16,7 @@ public class QuickSort {
     public static void quickSort(int[] arr, int start, int end) {
         if (start < end) {
             //把数组中的第0个数字做为标准数
+            swap(arr, start, (int) Math.random() * (end - start + 1)+start );
             int stard = arr[start];
             //记录需要排序的下标
             int low = start;
@@ -37,7 +39,7 @@ public class QuickSort {
             arr[low] = stard;
             //low已经被排序完了
             //处理所有的小的数字
-            quickSort(arr, start, low-1);
+            quickSort(arr, start, low - 1);
             //处理所有的大的数字
             quickSort(arr, low + 1, end);
         }

@@ -1,6 +1,7 @@
 package network;
 
-import java.util.*;
+
+import java.util.Scanner;
 
 /**
  * @author ming
@@ -97,54 +98,13 @@ import java.util.*;
 //    }
 //}
 
-
+import java.io.*;
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        for (int i = 0; i < N; i++) {
-            int len = sc.nextInt();
-            int[] nums = new int[len];
-            int[] values = new int[len];
-            for (int j = 0; j < len; j++) {
-                nums[j] = sc.nextInt();
-            }
-            int[] copy = Arrays.copyOf(nums, len);
-            for (int j = 0; j < len; j++) {
-                values[j] = sc.nextInt();
-            }
-
-
-            List<Integer> list = new ArrayList<>();
-            for (int j = 0; j < nums.length; j++) {
-                list.add(j);
-            }
-            Collections.sort(list, (o1, o2) -> nums[o2] - nums[o1]);
-            if (list.size() % 2 == 0) {
-                for (int j = 0; j < list.size(); j += 2) {
-                    int temp = nums[list.get(j)];
-                    nums[list.get(j)] = nums[list.get(j + 1)];
-                    nums[list.get(j + 1)] = temp;
-                }
-            } else {
-                int j = 0;
-                for (; j <= list.size() - 4; j += 2) {
-                    int temp = nums[list.get(j)];
-                    nums[list.get(j)] = nums[list.get(j + 1)];
-                    nums[list.get(j + 1)] = temp;
-                }
-                int temp = nums[list.get(j)];
-                nums[list.get(j)] = nums[list.get(j + 1)];
-                nums[list.get(j + 1)] = temp;
-                temp = nums[list.get(j + 1)];
-                nums[list.get(j + 1)] = nums[list.get(j + 2)];
-                nums[list.get(j + 2)] = temp;
-            }
-            int res = 0;
-            for (int j = 0; j < len; j++) {
-                res += values[j] * Math.abs(nums[j] - copy[j]);
-            }
-            System.out.println(res);
-        }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringBuilder str1 = new StringBuilder(str);
+        String s = str1.reverse().toString();
+        System.out.println(s);
     }
 }
