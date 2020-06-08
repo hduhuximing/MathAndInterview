@@ -31,7 +31,7 @@ public class Code_14_FindFirstIntersectNode {
 			return null;
 		}
 		Node n1 = head.next; // n1 -> slow
-		Node n2 = head.next.next; // n2 -> fast
+		Node n2 = head.next.next;  // n2 -> fast
 		while (n1 != n2) {
 			if (n2.next == null || n2.next.next == null) {
 				return null;

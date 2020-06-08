@@ -16,13 +16,13 @@ public class QuickSort {
     public static void quickSort(int[] arr, int start, int end) {
         if (start < end) {
             //把数组中的第0个数字做为标准数
-            swap(arr, start, (int) Math.random() * (end - start + 1)+start );
+//            swap(arr, start, (int) Math.random() * (end - start + 1)+start );
             int stard = arr[start];
             //记录需要排序的下标
             int low = start;
             int high = end;
             //循环找比标准数大的数和比标准数小的数
-            while (low < high) {
+            while (low < high) {//相等跳出
                 //右边的数字比标准数大
                 while (low < high && stard <= arr[high]) {
                     high--;
@@ -45,3 +45,5 @@ public class QuickSort {
         }
     }
 }
+
+

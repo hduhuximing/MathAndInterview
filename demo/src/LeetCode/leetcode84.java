@@ -10,21 +10,40 @@ import java.util.Stack;
  */
 public class leetcode84 {
     public int largestRectangleArea(int[] heights) {
+
         if (heights == null || heights.length == 0) {
             return 0;
         }
-        int res = 0;
         Stack<Integer> stack = new Stack<>();
+        int res = 0;
         for (int i = 0; i <= heights.length; i++) {
             int h = i == heights.length ? 0 : heights[i];
             while (!stack.isEmpty() && h < heights[stack.peek()]) {
-                int top = heights[stack.pop()];
+                int stackTop = heights[stack.pop()];
                 int start = stack.isEmpty() ? -1 : stack.peek();
-                int area = top * (i - start - 1);
+                int area = stackTop * (i - 1 - start);
                 res = Math.max(area, res);
             }
             stack.push(i);
         }
         return res;
+
+//
+//        if (heights == null || heights.length == 0) {
+//            return 0;
+//        }
+//        int res = 0;
+//        Stack<Integer> stack = new Stack<>();
+//        for (int i = 0; i <= heights.length; i++) {
+//            int h = i == heights.length ? 0 : heights[i];
+//            while (!stack.isEmpty() && h < heights[stack.peek()]) {
+//                int top = heights[stack.pop()];
+//                int start = stack.isEmpty() ? -1 : stack.peek();
+//                int area = top * (i - start - 1);
+//                res = Math.max(area, res);
+//            }
+//            stack.push(i);
+//        }
+//        return res;
     }
 }

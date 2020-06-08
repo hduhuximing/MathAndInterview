@@ -60,6 +60,7 @@ public class leetcode4 {
             m = n;
             n = tmp;
         }
+        //保证左边多一个
         int iMax = m, iMin = 0;
         int mid = (m + n + 1) / 2;
         while (iMin <= iMax) {
@@ -78,9 +79,11 @@ public class leetcode4 {
                 } else {
                     maxLeft = Math.max(A[i - 1], B[j - 1]);
                 }
+
                 if ((m + n) % 2 == 1) {
                     return maxLeft;
                 }
+
                 int minRight = 0;
                 if (i == m) {
                     minRight = B[j];

@@ -1,5 +1,8 @@
 package Zuo.class_03;
 
+/**
+ * 链表公共
+ */
 public class Code_10_PrintCommonPart {
 
 	public static class Node {

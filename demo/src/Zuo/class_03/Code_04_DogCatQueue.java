@@ -57,8 +57,8 @@ public class Code_04_DogCatQueue {
 		private long count;
 
 		public DogCatQueue() {
-			this.dogQ = new LinkedList<PetEnterQueue>();
-			this.catQ = new LinkedList<PetEnterQueue>();
+			this.dogQ = new LinkedList<>();
+			this.catQ = new LinkedList<>();
 			this.count = 0;
 		}
 

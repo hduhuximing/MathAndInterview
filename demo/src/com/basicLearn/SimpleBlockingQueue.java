@@ -12,6 +12,9 @@ import java.util.concurrent.locks.ReentrantLock;
  * @description
  */
 public class SimpleBlockingQueue {
+    public static void main(String[] args) {
+        System.out.println(1%-2);
+    }
 
     private static ReentrantLock lock = new ReentrantLock();
 
@@ -76,4 +79,5 @@ public class SimpleBlockingQueue {
 
         return t;
     }
+
 }

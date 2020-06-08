@@ -7,7 +7,7 @@ import java.util.HashMap;
  * @author ming
  * @version 1.0
  * @date 2020/3/26 1:24 下午
- * @description
+ * @description 求个数
  */
 public class leetcode560 {
     public int subarraySum(int[] nums, int k) {

@@ -11,7 +11,7 @@ import org.apache.ibatis.javassist.runtime.Inner;
  * 而导致内部类得到的值不一致，于是用final来让该引用不可改变。
  * 故如果定义了一个匿名内部类，并且希望它使用一个其外部定义的参数，那么编译器会要求该参数引用是final的。
  */
-class father {
+    class father {
     public int strong() {
         return 10;
     }
@@ -65,6 +65,8 @@ public class InnerCl {
 
     public static void main(String[] args) {
         InnerCl innerCl=new InnerCl();
+        InnerCl.Father_1 father_1=innerCl.new Father_1();
+        System.out.println(father_1.strong());
         System.out.println(innerCl.getfatherStrong());
 
 

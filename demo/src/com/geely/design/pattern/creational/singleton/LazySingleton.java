@@ -8,7 +8,7 @@ import java.lang.reflect.InvocationTargetException;
  * Created by geely
  */
 public class LazySingleton {
-    private static LazySingleton lazySingleton = null;
+    private static volatile LazySingleton lazySingleton = null;
 
     private LazySingleton() {
         if (lazySingleton != null) {
@@ -16,9 +16,16 @@ public class LazySingleton {
         }
     }
 
-    public synchronized static LazySingleton getInstance() {
+    //    public synchronized static LazySingleton getInstance() {
+    public static LazySingleton getInstance() {
+
         if (lazySingleton == null) {
-            lazySingleton = new LazySingleton();
+            synchronized (lazySingleton) {
+                if (lazySingleton == null) {
+                    lazySingleton = new LazySingleton();
+                }
+            }
+//            lazySingleton = new LazySingleton();
         }
         return lazySingleton;
     }
