@@ -13,7 +13,7 @@
 
 ![sort](/Users/huximing/IdeaProjects/MathAndInterview/README.assets/sort.png)
 
-[一.排序算法](/demo/src/commonSort)
+[一.排序算法](/math/src/commonSort)
 
 - [冒泡排序](./sortDoc/1.bubbleSort.md)
 - [选择排序](./sortDoc/2.selectionSort.md)
