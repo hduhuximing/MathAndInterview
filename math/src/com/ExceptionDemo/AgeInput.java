@@ -7,8 +7,6 @@ package com.ExceptionDemo;
  * @description
  */
 
-import com.basicLearn.String;
-
 /**
  * 定义一个方法，根据参数值决定是否抛出异常
  * */
@@ -20,7 +18,5 @@ public class AgeInput {
             System.out.println("---------------");
             throw new AgeOutOfBound();        //抛出异常用关键字throw
         }
-        String s=new String();
-        s.get();
     }
 }
