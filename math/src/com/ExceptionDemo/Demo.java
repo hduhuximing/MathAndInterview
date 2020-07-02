@@ -9,10 +9,14 @@ package com.ExceptionDemo;
 public class Demo {
 
     public static void main(String[] args) throws AgeOutOfBound {
-        int age = 300;
-        AgeInput.checkAage(age);
-        while(true){
-
+//        int age = 300;
+//        AgeInput.checkAage(age);
+        while (true) {
+            try {
+                int i = 1 / 0;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
