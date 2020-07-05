@@ -65,9 +65,6 @@ public class leetcode215 {
     }
 
     private int help(int[] nums, int start, int end) {
-        if (start < end) {
-            return -1;
-        }
         int temp = nums[start];
         int i = start;
         int j = end;
@@ -81,6 +78,7 @@ public class leetcode215 {
             }
             nums[j] = nums[i];
         }
+        //将最后的数据放到中心分割位
         nums[j] = temp;
         return j;
     }

@@ -25,3 +25,6 @@
 - [计数排序](./sortDoc/8.countingSort.md)
 - [桶排序](./sortDoc/9.bucketSort.md)
 - [基数排序](./sortDoc/10.radixSort.md)
+
+[leetcode学习题目](/math/src/LeetCode)
+

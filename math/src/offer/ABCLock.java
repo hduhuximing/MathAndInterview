@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2020/3/30 4:13 下午
  * @description
  */
-public class ABC {
+public class ABCLock {
 
     private static final Lock lock = new ReentrantLock();
     private static final Condition isA = lock.newCondition();
