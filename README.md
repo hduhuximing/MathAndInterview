@@ -27,4 +27,6 @@
 - [基数排序](./sortDoc/10.radixSort.md)
 
 [leetcode学习题目](/math/src/LeetCode)
-
+### leetcode进度
+- 当前一共完成437道题，进入复习阶段
+- 7月5日 [leetcode腾讯精选练习50题结束](https://leetcode-cn.com/problemset/50/)

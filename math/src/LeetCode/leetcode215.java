@@ -32,36 +32,20 @@ public class leetcode215 {
 //        }
 //        return queue.peek();
 //        2.快排
-          int len=nums.length;
-          int target=len-k;
-          int start=0;
-          int end=len-1;
-          while(true){
-              int index=help(nums,start,end);
-              if(index>target){
-                  end=index-1;
-              }else if(index<target){
-                  start=index+1;
-              }else{
-                  return nums[index];
-              }
-          }
-
-//        int len = nums.length;
-//        int start = 0;
-//        int end = len - 1;
-//        int target = len - k;
-//        while (true) {
-//            int index = help(nums, start, end);
-//            if (index < target) {
-//                start = index + 1;
-//            } else if (index > target) {
-//                end = index - 1;
-//            } else {
-//                return nums[index];
-//            }
-//        }
-
+        int len = nums.length;
+        int target = len - k;
+        int start = 0;
+        int end = len - 1;
+        while (true) {
+            int index = help(nums, start, end);
+            if (index > target) {
+                end = index - 1;
+            } else if (index < target) {
+                start = index + 1;
+            } else {
+                return nums[index];
+            }
+        }
     }
 
     private int help(int[] nums, int start, int end) {
