@@ -16,10 +16,10 @@ public class leetcode139 {
         int len = s.length();
         boolean[] res = new boolean[len + 1];
         res[0] = true;
+
         for (int i = 1; i <= len; i++) {
             for (int j = i - 1; j >= 0; j--) {
-                String curr = s.substring(j, i);
-                if (wordDict.contains(curr) && res[j]) {
+                if (wordDict.contains(s.substring(j, i)) && res[j]) {
                     res[i] = true;
                     break;
                 }

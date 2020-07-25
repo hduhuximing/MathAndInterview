@@ -36,12 +36,6 @@ public class leetcode2 {
                 l2 = l2.next;
             }
         }
-        if (l1 != null) {
-            curr.next = l2;
-        }
-        if (l2 != null) {
-            curr.next = l1;
-        }
         if (sum == 1) {
             curr.next = new ListNode(1);
         }

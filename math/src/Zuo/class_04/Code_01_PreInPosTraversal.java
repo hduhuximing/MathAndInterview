@@ -1,6 +1,9 @@
 package Zuo.class_04;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 public class Code_01_PreInPosTraversal {
 
@@ -9,7 +12,31 @@ public class Code_01_PreInPosTraversal {
 		public Node left;
 		public Node right;
 
-		public Node(int data) {
+        public int getValue() {
+            return value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
+        }
+
+        public Node getLeft() {
+            return left;
+        }
+
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public Node getRight() {
+            return right;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
+        }
+
+        public Node(int data) {
 			this.value = data;
 		}
 	}
@@ -135,7 +162,10 @@ public class Code_01_PreInPosTraversal {
 		head.right.right.left = new Node(9);
 		head.right.right.right = new Node(11);
 
-		// recursive
+		List<Node> list=new ArrayList<>();
+        List<Integer> collect = list.stream().map(Node::getValue).collect(Collectors.toList());
+
+        // recursive
 		System.out.println("==============recursive==============");
 		System.out.print("pre-order: ");
 		preOrderRecur(head);

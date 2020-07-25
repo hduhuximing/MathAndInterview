@@ -26,9 +26,12 @@ public class leetcode300 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
+        if (nums.length == 1) {
+            return 1;
+        }
         int[] dp = new int[nums.length];
         int max = 0;
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             dp[i] = 1;
             for (int j = 0; j < i; j++) {
                 if (nums[j] < nums[i]) {
@@ -37,6 +40,6 @@ public class leetcode300 {
             }
             max = Math.max(max, dp[i]);
         }
-        return dp[nums.length - 1];
+        return max;
     }
 }

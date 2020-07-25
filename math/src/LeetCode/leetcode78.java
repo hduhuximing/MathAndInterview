@@ -10,7 +10,7 @@ import java.util.List;
  * @description
  */
 public class leetcode78 {
-    private List<List<Integer>> res=new ArrayList<>();
+    private List<List<Integer>> res = new ArrayList<>();
 
     public List<List<Integer>> subsets(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -24,7 +24,7 @@ public class leetcode78 {
         res.add(new ArrayList<>(list));
         for (int i = index; i < nums.length; i++) {
             list.add(nums[i]);
-            help(nums,  + 1, list);
+            help(nums, i + 1, list);
             list.remove(list.size() - 1);
         }
     }

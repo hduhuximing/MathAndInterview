@@ -4,7 +4,7 @@ package LeetCode;
  * @author ming
  * @version 1.0
  * @date 2020/2/12 6:38 下午
- * @description
+ * @description 高的不动，矮的动，设置左边最大和右边最大，只要比max- left or right大小，res+差值
  */
 public class leetcode42 {
     public static int trap(int[] height) {
