@@ -1,18 +1,16 @@
 package commonSort;
 
-import java.util.Arrays;
-
-
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{3, 4, 6, 7, 2, 7, 2, 8, 0, 9, 1};
+        int[] arr = new int[]{25,84,21,47,15,27,68,35,20};
         quickSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
     }
 
     //找一个值，将数组分成小于当前和大于当前两部分，一直拆分。
     public static void quickSort(int[] arr, int start, int end) {
+
         if (start < end) {
             //把数组中的第0个数字做为标准数
 //            swap(arr, start, (int) Math.random() * (end - start + 1)+start );
@@ -36,12 +34,15 @@ public class QuickSort {
             }
             //把标准数赋给低所在的位置的元素
             arr[low] = stard;
+//            System.out.println(Arrays.toString(arr));
+
             //low已经被排序完了
             //处理所有的小的数字
             quickSort(arr, start, low - 1);
             //处理所有的大的数字
             quickSort(arr, low + 1, end);
         }
+//        System.out.println(Arrays.toString(arr));
     }
 }
 

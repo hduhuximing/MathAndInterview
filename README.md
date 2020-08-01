@@ -32,3 +32,4 @@
 - 7月5日 [leetcode腾讯精选练习50题结束](https://leetcode-cn.com/problemset/50/)
 - 7月25日 leetcode热题100完成50
 - 7月25日 剑指offer开始
+- 8月1日 leetcode热题100完成63

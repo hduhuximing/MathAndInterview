@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 3, 5, 2, 4, 6, 8, 10};
-        System.out.println(Arrays.toString(arr));
+        int[] arr = new int[]{25,84,21,47,15,27,68,35,20};
+//        System.out.println(Arrays.toString(arr));
         mergeSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
     }
 
     //归并
@@ -18,6 +18,7 @@ public class MergeSort {
             mergeSort(arr, start, mid);
             mergeSort(arr, mid + 1, end);
             mergeHelper(arr, start, mid, end);
+            System.out.println(Arrays.toString(arr));
         }
     }
 
