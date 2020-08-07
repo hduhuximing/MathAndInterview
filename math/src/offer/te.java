@@ -2,33 +2,49 @@ package offer;
 
 import java.util.Scanner;
 
-/**
- * @author ming
- * @version 1.0
- * @date 2020/7/31 2:58 下午
- * @description
- */
 public class te {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int x0 = sc.nextInt();
-        int y0 = sc.nextInt();
-        int x1 = sc.nextInt();
-        int y1 = sc.nextInt();
-
-        int x2 = sc.nextInt();
-        int y2 = sc.nextInt();
-        int x3 = sc.nextInt();
-        int y3 = sc.nextInt();
-
-        int midx = Math.abs(x0 + x1 - x2 - x3);
-        int x = Math.abs(x0 - x1) + Math.abs(x2 - x3);
-        int midy = Math.abs(y0 + y1 - y2 - y3);
-        int y = Math.abs(y0 - y1) + Math.abs(y2 - y3);
-        if (midx <= x && midy <= y) {
-            System.out.println(1);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        //美味
+        int T = sc.nextInt();
+        // 0 热量  1 美味
+        int[][] mid = new int[N][2];
+        int[][] last = new int[M][2];
+        for (int i = 0; i < N; i++) {
+            mid[i][0] = sc.nextInt();
+            mid[i][1] = sc.nextInt();
+        }
+        for (int i = 0; i < M; i++) {
+            last[i][0] = sc.nextInt();
+            last[i][1] = sc.nextInt();
+        }
+        //最少
+        int hot = Integer.MAX_VALUE;
+        for (int i = 0; i < N; i++) {
+            if (mid[i][1] >= T && mid[i][0] < hot) {
+                hot = mid[i][0];
+            }
+        }
+        for (int i = 0; i < M; i++) {
+            if (last[i][1] >= T && last[i][0] < hot) {
+                hot = last[i][0];
+            }
+        }
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                //美味
+                int currDe = mid[i][1] + last[j][1];
+                if (currDe >= T) {
+                    hot = Math.min(hot, mid[i][0] + last[j][0]);
+                }
+            }
+        }
+        if (hot == Integer.MAX_VALUE) {
+            System.out.println(-1);
         } else {
-            System.out.println(0);
+            System.out.println(hot);
         }
     }
 }

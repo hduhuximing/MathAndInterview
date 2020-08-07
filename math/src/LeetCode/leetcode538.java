@@ -16,23 +16,27 @@ public class leetcode538 {
             this.val = val;
         }
     }
-//    int sum=0;
+
     public TreeNode convertBST(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return null;
         }
-        help(root,0);
+        help(root, 0);
         return root;
     }
 
-    private int help(TreeNode root,int sum) {
+    private int help(TreeNode root, int sum) {
         if (root == null) {
             return sum;
         }
-        sum= help(root.right,sum);
-        root.val+=sum;
-        sum=root.val;
-        sum=help(root.left,sum);
+        //向右边
+        sum = help(root.right, sum);
+        //更新一下当前节点
+        root.val += sum;
+        //获取最大值
+        sum = root.val;
+        //最大值作为起始位置，更新左侧，
+        sum = help(root.left, sum);
         return sum;
     }
 }

@@ -2,6 +2,7 @@ package LeetCode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class leetcode56 {
         if (intervals == null || intervals.length == 0) {
             return res.toArray(new int[0][]);
         }
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         int i = 0;
         while (i < intervals.length) {
             int left = intervals[i][0];

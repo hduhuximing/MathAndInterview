@@ -1,132 +1,70 @@
 package offer;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * 15 20 21 25 47 27 68 35 84
- * 15 20 21 25 47 27 68 35 84
- * 15 20 21 25 47 27 68 35 84
- * 15 20 21 25 35 27 47 68 84
- * 15 20 21 25 27 35 47 68 84
- * 15 20 21 25 27 35 47 68 84
- */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] num = new int[N];
-        for (int i = 0; i < N; i++) {
-            num[i] = sc.nextInt();
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        Long res = 0L;
+        outer:
+        for (int i = start; i <= end; i++) {
+            String curr = i + "";
+            if (curr.length() == 1) {
+                continue;
+            }
+            inner:
+            for (int j = 0; j < curr.length(); j++) {
+                StringBuilder str = new StringBuilder();
+                for (int k = 0; k < curr.length(); k++) {
+                    if (k == j) {
+                        continue;
+                    }
+                    str.append(curr.charAt(k));
+                }
+
+                int k = 0;
+                while (k != str.length() && str.charAt(k) == '0') {
+                    k++;
+                }
+                if (k == str.length()) {
+                    continue inner;
+                }
+
+
+                if (str.length() == 1) {
+                    res++;
+                    continue outer;
+                }
+                Long temp = Long.parseLong(str.toString());
+                //长度大于1
+                if (prime(temp) && plain(temp)) {
+                    res++;
+                    continue outer;
+                }
+            }
         }
-        quickSort(num, 0, N - 1);
-        System.out.println(Arrays.toString(num));
+        System.out.println(res);
     }
 
-    public static void quickSort(int[] arr, int start, int end) {
-        if (start < end) {
-            int stard = arr[start];
-            int low = start;
-            int high = end;
-            while (low < high) {//相等跳出
-                while (low < high && stard <= arr[high]) {
-                    high--;
-                }
-                arr[low] = arr[high];
-                while (low < high && arr[low] <= stard) {
-                    low++;
-                }
-                arr[high] = arr[low];
-            }
-            arr[low] = stard;
-
-            quickSort(arr, start, low - 1);
-            System.out.println(Arrays.toString(arr));
-
-            quickSort(arr, low + 1, end);
-            System.out.println(Arrays.toString(arr));
-
-        }else {
-
+    private static boolean plain(Long temp) {
+        double sqrt = Math.sqrt(temp);
+        if (temp % 2 == 0) {
+            return false;
         }
+        for (int i = 2; i <= sqrt; i++) {
+            if (temp % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean prime(Long temp) {
+        StringBuilder str = new StringBuilder();
+        str.append(temp);
+        String s = str.reverse().toString();
+        return s.equals(temp + "");
     }
 }
-
-//        Scanner sc = new Scanner(System.in);
-//        int[] num = new int[5];
-//        for (int i = 0; i < 5; i++) {
-//            num[i] = sc.nextInt();
-//        }
-//        Map<Integer, Integer> map = new HashMap<>();
-//        map.put(1, num[0]);
-//        map.put(5, num[1]);
-//        map.put(10, num[2]);
-//        map.put(50, num[3]);
-//        map.put(100, num[4]);
-//        int aim = sc.nextInt();
-//        long res = 0;
-//
-//        Integer num100 = map.get(100);
-//        while (aim > 0) {
-//            if (aim >= 100 && num100 > 0) {
-//                aim -= 100;
-//                num100--;
-//                res++;
-//            } else {
-//                break;
-//            }
-//        }
-//
-//        Integer num50 = map.get(100);
-//        while (aim > 0) {
-//            if (aim >=50 && num50 > 0) {
-//                aim -= 50;
-//                num50--;
-//                res++;
-//            } else {
-//                break;
-//            }
-//        }
-//
-//        Integer num10 = map.get(100);
-//        while (aim > 0) {
-//            if (aim >= 10 && num10 > 0) {
-//                aim -= 10;
-//                num10--;
-//                res++;
-//            } else {
-//                break;
-//            }
-//        }
-//
-//        Integer num5 = map.get(100);
-//        while (aim > 0) {
-//            if (aim >= 5 && num5 > 0) {
-//                aim -= 5;
-//                num5--;
-//                res++;
-//            } else {
-//                break;
-//            }
-//        }
-//        Integer num1 = map.get(100);
-//        while (aim > 0) {
-//            if (aim >= 1 && num1 > 0) {
-//                aim -= 1;
-//                num5--;
-//                res++;
-//            } else {
-//                break;
-//            }
-//        }
-//        if (aim != 0) {
-//            System.out.println(-1);
-//        } else {
-//            System.out.println(res);
-//        }
-//    }
-//}
-
-
-
-
