@@ -33,6 +33,7 @@ public class leetcode448 {
         }
         int i = 0;
         while (i < nums.length) {
+            //循环移动数据
             if (nums[i] == i + 1 || nums[i] == nums[nums[i] - 1]) {
                 i++;
             } else {
@@ -40,6 +41,7 @@ public class leetcode448 {
             }
         }
         for (int j = 0; j < nums.length; j++) {
+            //检测位置不对的数据
             if (nums[j] != j + 1) {
                 list.add(j + 1);
             }

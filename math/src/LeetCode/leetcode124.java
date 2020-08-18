@@ -16,6 +16,7 @@ public class leetcode124 {
             this.val = val;
         }
     }
+
     private int res = Integer.MIN_VALUE;
 
     public int maxPathSum(TreeNode root) {
@@ -29,7 +30,7 @@ public class leetcode124 {
         }
         int left = Math.max(0, help(root.left));
         int right = Math.max(0, help(root.right));
-        res=Math.max(res,left+right+root.val);
-        return Math.max(left,right)+root.val;
+        res = Math.max(res, left + right + root.val);
+        return Math.max(left, right) + root.val;
     }
 }

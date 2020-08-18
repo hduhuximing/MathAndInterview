@@ -16,9 +16,11 @@ package LeetCode;
 public class leetcode31 {
     public void nextPermutation(int[] nums) {
         int i = nums.length - 2;
+        //反向找到正序数
         while (i >= 0 && nums[i] >= nums[i + 1]) {
             i--;
         }
+        //找到后面比当前大的第一个，交换
         if (i >= 0) {
             int j = nums.length - 1;
             while (j >= 0 && nums[j] <= nums[i]) {
@@ -26,6 +28,7 @@ public class leetcode31 {
             }
             swap(nums, i, j);
         }
+        //转后面的数据
         revers(nums, i + 1);
     }
 

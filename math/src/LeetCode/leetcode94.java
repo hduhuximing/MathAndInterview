@@ -30,12 +30,15 @@ public class leetcode94 {
         }
         Stack<TreeNode> stack = new Stack<>();
         while (root != null || !stack.isEmpty()) {
+            //找到最左边的节点
             while (root != null) {
                 stack.push(root);
                 root = root.left;
             }
+            //获取栈顶并添加到res中
             TreeNode pop = stack.pop();
             res.add(pop.val);
+            //找右节点
             root = root.right;
         }
         return res;

@@ -30,10 +30,12 @@ public class leetcode95 {
 
     private List<TreeNode> generateTree(int start, int end) {
         List<TreeNode> cur = new ArrayList<>();
+        //跳出条件
         if (start > end) {
             cur.add(null);
             return cur;
         }
+        //递归拼接，以当前节点为根节点，获取左边的节点和右边的节点list
         for (int i = start; i <= end; i++) {
             List<TreeNode> left = generateTree(start, i - 1);
             List<TreeNode> right = generateTree(i + 1, end);

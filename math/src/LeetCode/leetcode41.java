@@ -8,23 +8,39 @@ package LeetCode;
  */
 public class leetcode41 {
     public int firstMissingPositive(int[] nums) {
+//        if (nums == null || nums.length == 0) {
+//            return -1;
+//        }
+//        for (int i = 0; i < nums.length; ) {
+//            if (nums[i] > 0 && nums[i] < nums.length && nums[i] != nums[nums[i] - 1]) {
+//                int temp = nums[i];
+//                nums[i] = nums[nums[i] - 1];
+//                nums[nums[i] - 1] = temp;
+//            } else {
+//                i++;
+//            }
+//        }
+//        int index = 0;
+//        while (index < nums.length && nums[index] == index + 1) {
+//            index++;
+//        }
+//        return index + 1;
         if (nums == null || nums.length == 0) {
-            return -1;
+            return 1;
         }
-        for (int i = 0; i < nums.length; ) {
-            if (nums[i] > 0 && nums[i] < nums.length && nums[i] != nums[nums[i] - 1]) {
-                int temp = nums[i];
-                nums[i] = nums[nums[i] - 1];
-                nums[nums[i] - 1] = temp;
-            } else {
-                i++;
+        int[] arr = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0 && nums[i] <= nums.length) {
+                arr[nums[i] - 1]++;
             }
         }
-        int index = 0;
-        while (index < nums.length && nums[index] == index + 1) {
-            index++;
+        for (int i = 0; i < nums.length; i++) {
+            if (arr[i] == 0) {
+                return i + 1;
+            }
         }
-        return index + 1;
+        return nums.length + 1;
+
 
     }
 }

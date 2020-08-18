@@ -1,69 +1,56 @@
 package network;
 
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.HashSet;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        Map<Integer,Double> map=new HashMap<>();
 
+    boolean res = false;
 
-        Set<Map.Entry<Integer, Double>> entries = map.entrySet();
+    public boolean Game24Points(int[] arr) {
+        help(arr, 24, new HashSet<>());
+        return res;
+    }
 
+    private boolean help(int[] arr, double num, HashSet<Integer> path) {
+        if (num == 0) {
+            res = true;
+            return true;
+        }
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (path.contains(i)) {
+                continue;
+            }
+            for (int j = i + 1; j < arr.length; j++) {
+                if (path.contains(j)) {
+                    continue;
+                }
+                path.add(i);
+                path.add(j);
+                if (help(arr, num - (arr[i] + arr[j]), path))
+                    return true;
+                else if (help(arr, num / (arr[i] + arr[j]), path))
+                    return true;
 
-  
+                else if (help(arr, num - (arr[i] - arr[j]), path))
+                    return true;
+                else if (help(arr, num / (arr[i] - arr[j]), path))
+                    return true;
+
+                else if (help(arr, num - (arr[i] * arr[j]), path))
+                    return true;
+                else if (help(arr, num / (arr[i] * arr[j]), path))
+                    return true;
+
+                else if (help(arr, num - (arr[i] / arr[j]), path))
+                    return true;
+                else if (help(arr, num / (arr[i] / arr[j]), path))
+                    return true;
+                path.remove(i);
+                path.remove(j);
+            }
+        }
+        return false;
+
     }
 }
-//public class Main {
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        int N = sc.nextInt();
-//        for (int i = 0; i < N; i++) {
-//            int po = sc.nextInt();
-//            int[][] arr = new int[po][po];
-//            int len = sc.nextInt();
-//            for (int j = 0; j < po; j++) {
-//                for (int k = 0; k < po; k++) {
-//                    arr[j][k] = sc.nextInt();
-//                }
-//            }
-//            int X = sc.nextInt();
-//            int Y = sc.nextInt();
-//            Map<Integer, Integer> map = new TreeMap<>();
-//            for (int j = 0; j < po; j++) {
-//                for (int k = 0; k < po; k++) {
-//                    if (arr[j][k] != 0) {
-//                        int key = (X - j) * (X - j) + (Y - k) * (Y - k);
-//                        int value = arr[j][k];
-//                        map.put(key, map.getOrDefault(key, 0) + value);
-//                    }
-//                }
-//            }
-//            for(Map.Entry<Integer,Integer>entry:map.entrySet()){
-//                if(len*len<entry.getKey()){
-//                    break;
-//                }else{
-//                    len+=entry.getValue();
-//
-//                }
-//            }
-//            System.out.println(len);
-//        }
-//    }
-//}
-//
-//import java.io.*;
-//public class Main {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        String str = br.readLine();
-//        StringBuilder str1 = new StringBuilder(str);
-//        String s = str1.reverse().toString();
-//        System.out.println(s);
-//    }
-//}

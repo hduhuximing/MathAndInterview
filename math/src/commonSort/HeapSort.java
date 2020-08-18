@@ -7,9 +7,27 @@ public class HeapSort {
     public static void main(String[] args) {
         int[] arr = new int[]{9, 6, 8, 7, 0, 1, 10, 4, 2};
 //        heapSort(arr);
-        heSort(arr);
+//        heSort(arr);
+        hsort(arr);
         System.out.println(Arrays.toString(arr));
     }
+
+    public static void hsort(int[] arr) {
+        for (int i = (arr.length - 1) / 2; i >= 0; i--) {
+            maxhe(arr, arr.length, i);
+        }
+        for (int i = arr.length - 1; i > 0; i--) {
+            swap(arr, i, 0);
+            maxhe(arr, i, 0);
+        }
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
 
     public static void heSort(int[] arr) {
         //找到第一个父节点，大顶堆

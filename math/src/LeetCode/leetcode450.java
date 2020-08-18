@@ -16,8 +16,10 @@ public class leetcode450 {
             this.val = val;
         }
     }
+
     public TreeNode deleteNode(TreeNode root, int key) {
-        if (root == null) return null;
+        if (root == null)
+            return null;
         if (root.val == key) {
             //如果右子树为null，则返回左子树
             if (root.right == null) {
@@ -32,8 +34,10 @@ public class leetcode450 {
                     node = node.left;
                 }
                 //在右子树上删除node节点
-                if (parent.left == node) parent.left = node.right;
-                if (parent.right == node) parent.right = node.right;
+                if (parent.left == node)
+                    parent.left = node.right;
+                if (parent.right == node)
+                    parent.right = node.right;
                 //将node节点放在key节点位置上
                 node.left = root.left;
                 node.right = root.right;

@@ -11,7 +11,7 @@ public class leetcode3 {
         int i = 0, j = 0, max = 0;
         int[] res = new int[256];
         while (j < s.length()) {
-            i = Math.max(res[s.charAt(i)], i);
+            i = Math.max(res[s.charAt(j)], i);
             max = Math.max(max, j - i + 1);
             res[s.charAt(j)] = ++j;
         }
