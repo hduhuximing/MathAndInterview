@@ -34,7 +34,9 @@ public class leetcode337 {
         int[] l = help(root.left);
         int[] r = help(root.right);
         int[] res = new int[2];
+        //取根节点
         res[0] = root.val + l[1] + r[1];
+        //不取根节点
         res[1] = Math.max(l[0], l[1]) + Math.max(r[0], r[1]);
         return res;
     }

@@ -12,6 +12,7 @@ public class leetcode61 {
             return head;
         }
         ListNode res=head;
+        //求出长度，编程循环， 从头开始线下找找到位置
         int len=1;
         while(res.next!=null){
             res=res.next;

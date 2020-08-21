@@ -23,6 +23,7 @@ public class leetcode199 {
         if (root == null) {
             return;
         }
+        //level等于size时表示当期这行没有添加
         if (res.size() == level) {
             res.add(root.val);
         }

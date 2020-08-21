@@ -5,10 +5,8 @@ import java.util.Arrays;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{25,84,21,47,15,27,68,35,20};
-//        System.out.println(Arrays.toString(arr));
+        int[] arr = new int[]{25, 84, 21, 47, 15, 27, 68, 35, 20};
         mergeSort(arr, 0, arr.length - 1);
-//        System.out.println(Arrays.toString(arr));
     }
 
     //归并

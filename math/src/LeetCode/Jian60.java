@@ -32,7 +32,7 @@ public class Jian60 {
         for (int i = 1; i <= 6; i++) {
             dp[1][i] = 1;
         }
-        for (int i = 2; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             for (int j = i; j <= 6 * n; j++) {
                 for (int k = 1; k <= 6; k++) {
                     dp[i][j] += j > k ? dp[i - 1][j - k] : 0;

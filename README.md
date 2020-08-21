@@ -37,4 +37,5 @@
 - 8月11日 剑指第一天11
 - 8月15日 简单题190 dp85
 - 8月18日 后端、前端、数据开发完成 https://www.nowcoder.com/discuss/450287?source_id=profile_create&channel=1013
-            
+- 8月19日 树606  剑指36
+- 8月20日 剑指结束        

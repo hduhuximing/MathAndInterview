@@ -35,7 +35,6 @@ public class QuickSort {
             //把标准数赋给低所在的位置的元素
             arr[low] = stard;
 //            System.out.println(Arrays.toString(arr));
-
             //low已经被排序完了
             //处理所有的小的数字
             quickSort(arr, start, low - 1);
