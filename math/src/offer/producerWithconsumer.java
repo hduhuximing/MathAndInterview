@@ -8,7 +8,7 @@ import java.util.concurrent.BlockingQueue;
  * @author ming
  * @version 1.0
  * @date 2020/8/14 10:30 上午
- * @description
+ * @description 阻塞队列的生产者消费者
  */
 class Producer implements Runnable {
     private final BlockingQueue<Integer> queue;
@@ -49,22 +49,13 @@ class Consumer implements Runnable {
         while (true) {
             try {
                 Thread.sleep(2000);//模拟耗时
-                consume(
-                        queue.take());
+                consume(queue.take());
             } catch (InterruptedException e) {
             }
         }
     }
-
     private void consume(Integer n) {
         System.out.println("Thread:" + Thread.currentThread().getName() + " consume:" + n);
-    }
-
-
-    private int produce() {
-        int n = new Random().nextInt(10000);
-        System.out.println("Thread:" + Thread.currentThread().getId() + " produce:" + n);
-        return n;
     }
 }
 

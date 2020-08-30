@@ -3,6 +3,9 @@ package commonSort;
 public class QuickSort {
 
     public static void main(String[] args) {
+        for(String curr:args){
+            System.out.println(curr);
+        }
         int[] arr = new int[]{25,84,21,47,15,27,68,35,20};
         quickSort(arr, 0, arr.length - 1);
 //        System.out.println(Arrays.toString(arr));

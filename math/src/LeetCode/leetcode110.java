@@ -17,9 +17,9 @@ public class leetcode110 {
         }
         int l = help(root.left);
         int r = help(root.right);
-        if(l==-1||r==-1||Math.abs(l-r)>1){
+        if (l == -1 || r == -1 || Math.abs(l - r) > 1) {
             return -1;
         }
-        return Math.max(l,r)+1;
+        return Math.max(l, r) + 1;
     }
 }

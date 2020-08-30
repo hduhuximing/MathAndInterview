@@ -30,12 +30,11 @@ public class leetcode382 {
         int count = 0;
         boolean isFull = false;
         while (head != null) {
-            count++;
             if (!isFull) {
                 res[0] = head.val;
                 isFull = true;
             } else {
-                int i = rm.nextInt(count);
+                int i = rm.nextInt(++count);
                 if (i < 1) {
                     res[i] = head.val;
                 }

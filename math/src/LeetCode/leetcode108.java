@@ -4,7 +4,7 @@ package LeetCode;
  * @author ming
  * @version 1.0
  * @date 2020/8/9 1:13 下午
- * @description
+ * @description 二分生成树
  */
 public class leetcode108 {
     public TreeNode sortedArrayToBST(int[] nums) {

@@ -18,12 +18,20 @@ public class leetcode51 {
         int[] queue = new int[n];
         help(res, queue, 0);
         return res;
+//        List<List<String>> res = new ArrayList<>();
+//        if (n == 0) {
+//            return res;
+//        }
+//        int[] queue = new int[n];
+//        help(res, queue, 0);
+//        return res;
     }
 
+    //
     private void help(List<List<String>> res, int[] queue, int row) {
         if (row == queue.length) {
             add(queue, res);
-            return ;
+            return;
         }
         for (int i = 0; i < queue.length; i++) {
             queue[row] = i;
@@ -31,30 +39,50 @@ public class leetcode51 {
                 help(res, queue, row + 1);
             }
         }
+
+//        if (row == queue.length) {
+//            add(queue, res);
+//            return ;
+//        }
+//        for (int i = 0; i < queue.length; i++) {
+//            queue[row] = i;
+//            if (isValid(queue, row)) {
+//                help(res, queue, row + 1);
+//            }
+//        }
     }
 
+    //
     private boolean isValid(int[] queue, int row) {
-        for(int i=0;i<row;i++){
-            //同一列
-            if(queue[i]==queue[row]){
+        for (int i = 0; i < row; i++) {
+            if (queue[i] == queue[row]) {
                 return false;
             }
-            //斜角
-            if(Math.abs(i-row)==Math.abs(queue[i]-queue[row])){
+            if (Math.abs(queue[i] - queue[row]) == Math.abs(i - row)) {
                 return false;
             }
         }
         return true;
+//        for(int i=0;i<row;i++){
+//            //同一列
+//            if(queue[i]==queue[row]){
+//                return false;
+//            }
+//            //斜角
+//            if(Math.abs(i-row)==Math.abs(queue[i]-queue[row])){
+//                return false;
+//            }
+//        }
+//        return true;
     }
 
+    //
     private void add(int[] queue, List<List<String>> res) {
-        ArrayList<String> list = new ArrayList<>();
-        //行
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < queue.length; i++) {
             StringBuilder str = new StringBuilder();
-            //列
             for (int j = 0; j < queue.length; j++) {
-                if (j == queue[i]) {
+                if (queue[i] == j) {
                     str.append("Q");
                 } else {
                     str.append(".");
@@ -63,5 +91,20 @@ public class leetcode51 {
             list.add(str.toString());
         }
         res.add(new ArrayList<>(list));
+//        ArrayList<String> list = new ArrayList<>();
+//        //行
+//        for (int i = 0; i < queue.length; i++) {
+//            StringBuilder str = new StringBuilder();
+//            //列
+//            for (int j = 0; j < queue.length; j++) {
+//                if (j == queue[i]) {
+//                    str.append("Q");
+//                } else {
+//                    str.append(".");
+//                }
+//            }
+//            list.add(str.toString());
+//        }
+//        res.add(new ArrayList<>(list));
     }
 }

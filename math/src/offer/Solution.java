@@ -6,74 +6,34 @@ package offer;
  * @date 2020/4/12 4:23 下午
  * @description
  */
+
+import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Solution {
 
-    /**
-     * 获取最大可同事办公员工数
-     *
-     * @param pos char字符型二维数组 工位分布
-     * @return int整型
-     */
-    private int count = 0;
+    public static void main(String args[]) {
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
+        for (int i = 0; i < n; i++) {
+            int curr = sc.nextInt();
+            map.put(curr, map.getOrDefault(curr, 0) + 1);
+        }
+        Set<Integer> set = map.keySet();
+        for (int num : set) {
+            map.put(num + 1, map.getOrDefault(num, 0) - 1);
+            map.put(num - 1, map.getOrDefault(num, 0) - 1);
 
-    public int GetMaxStaffs(char[][] pos) {
-        // write code here
-        for (int i = 0; i < pos.length; i++) {
-            for (int j = 0; j < pos[i].length; j++) {
-                if (pos[i][j] == '.') {
-                    boolean flag = help(pos, i, j + 1)
-                            && help(pos, i, j - 1)
-                            && help(pos, i + 1, j)
-                            && help(pos, i - 1, j);
-                    if (flag) {
-                        count++;
-                        pos[i][j] = '#';
-                    }
-                }
+        }
+        int sum = 0;
+        for (int nums : set) {
+            if (map.get(nums) > 0) {
+                sum += nums;
             }
         }
-        return count;
-    }
-
-    private boolean help(char[][] pos, int i, int j) {
-        if (i < 0 || i >= pos.length || j < 0 || j >= pos[0].length) {
-            return true;
-        }
-        if (pos[i][j] == '#') {
-            return false;
-        }
-        return true;
+        System.out.println(sum);
     }
 }
-
-//    /**
-//     * 根据顾客属性计算出顾客排队顺序
-//     *
-//     * @param a int整型一维数组 顾客a属性
-//     * @param b int整型一维数组 顾客b属性
-//     * @return int整型一维数组
-//     */
-//    public int[] WaitInLine(int[] a, int[] b) {
-//        // write code here
-//        List<Integer> list = new ArrayList<>();
-//        int len = a.length;
-//        for (int i = 0; i < len; i++) {
-//            list.add(i);
-//        }
-//        Collections.sort(list, new Comparator<Integer>() {
-//            @Override
-//            public int compare(Integer o1, Integer o2) {
-//                if (a[o1] < b[o1]) {
-//                    return a[o1] - a[o2];
-//                } else {
-//                    return b[o1] - b[o2];
-//                }
-//            }
-//        });
-//
-//        int[] res = new int[list.size()];
-//        for (int i = 0; i < list.size(); i++) {
-//            res[i] = list.get(i) + 1;
-//        }
-//        return res;
-//    }

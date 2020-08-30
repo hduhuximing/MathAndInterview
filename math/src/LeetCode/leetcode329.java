@@ -28,12 +28,9 @@ public class leetcode329 {
         return re;
     }
 
+
     private int help(int[][] matrix, int[][] res, int i, int j, int pre) {
-        if (i < 0
-                || i >= matrix.length
-                || j < 0
-                || j >= matrix[0].length
-                || matrix[i][j] <= pre) {
+        if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[0].length || matrix[i][j] <= pre) {
             return 0;
         }
         if (res[i][j] != 0) {
@@ -45,5 +42,21 @@ public class leetcode329 {
                 Math.max(help(matrix, res, i, j - 1, matrix[i][j]),
                         help(matrix, res, i, j + 1, matrix[i][j]))) + 1;
         return res[i][j];
+//        if (i < 0
+//                || i >= matrix.length
+//                || j < 0
+//                || j >= matrix[0].length
+//                || matrix[i][j] <= pre) {
+//            return 0;
+//        }
+//        if (res[i][j] != 0) {
+//            return res[i][j];
+//        }
+//        res[i][j] = Math.max(
+//                Math.max(help(matrix, res, i - 1, j, matrix[i][j]),
+//                        help(matrix, res, i + 1, j, matrix[i][j])),
+//                Math.max(help(matrix, res, i, j - 1, matrix[i][j]),
+//                        help(matrix, res, i, j + 1, matrix[i][j]))) + 1;
+//        return res[i][j];
     }
 }

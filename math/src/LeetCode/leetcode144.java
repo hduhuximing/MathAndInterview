@@ -10,18 +10,19 @@ import java.util.Stack;
  * @date 2020/3/9 3:33 下午
  * @description 给定一个二叉树，返回它的 前序 遍历。
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
 
 //根左右
 public class leetcode144 {
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) {
