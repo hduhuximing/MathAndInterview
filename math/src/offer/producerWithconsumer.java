@@ -23,6 +23,7 @@ class Producer implements Runnable {
             while (true) {
                 Thread.sleep(1000);//模拟耗时
                 queue.put(produce());
+                System.out.println(queue.size());
             }
         } catch (InterruptedException e) {
         }
@@ -37,10 +38,10 @@ class Producer implements Runnable {
 
 
 //消费者
-class Consumer implements Runnable {
-    private final BlockingQueue<Integer> queue;
+class Consumers implements Runnable {
+    private BlockingQueue<Integer> queue;
 
-    public Consumer(BlockingQueue q) {
+    public Consumers(BlockingQueue q) {
         this.queue = q;
     }
 
@@ -54,6 +55,7 @@ class Consumer implements Runnable {
             }
         }
     }
+
     private void consume(Integer n) {
         System.out.println("Thread:" + Thread.currentThread().getName() + " consume:" + n);
     }
@@ -64,8 +66,8 @@ public class producerWithconsumer {
     public static void main(String[] args) {
         BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(100);
         Producer p = new Producer(queue);
-        Consumer c1 = new Consumer(queue);
-        Consumer c2 = new Consumer(queue);
+        Consumers c1 = new Consumers(queue);
+        Consumers c2 = new Consumers(queue);
         new Thread(p, "producer").start();
         new Thread(c1, "consumer1").start();
         new Thread(c2, "consumer2").start();

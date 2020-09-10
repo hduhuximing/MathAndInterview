@@ -6,7 +6,12 @@ package LeetCode;
  * @date 2020/2/13 10:45 上午
  * @description
  */
+
+
+
+
 public class leetcode152 {
+    private int a=1;
     public static int maxProduct(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;

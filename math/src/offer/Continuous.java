@@ -15,7 +15,12 @@ import java.util.Arrays;
  * 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何，
  * 如果牌能组成顺子就输出true，否则就输出false。为了方便起见,你可以认为大小王是0。
  */
-public class Continuous {
+
+interface a {
+    int a = 1;
+}
+
+public class Continuous implements a {
     public boolean isContinuous(int[] numbers) {
         int zero = 0;
         int interval = 0;
@@ -33,6 +38,14 @@ public class Continuous {
             }
             interval += numbers[i + 1] - numbers[i] - 1;
         }
-        return interval<=zero;
+        return interval <= zero;
     }
+
+    public static void main(String[] args) {
+        System.out.println(a);
+    }
+
+
+
+
 }

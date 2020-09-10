@@ -4,12 +4,13 @@ package LeetCode;
  * @author ming
  * @version 1.0
  * @date 2020/8/27 6:22 下午
- * @description count记录当前数据锁在
+ * @description count记录当前数据所在
  */
 public class leetcode670 {
     public int maximumSwap(int num) {
         int[] count = new int[10];
         char[] chs = String.valueOf(num).toCharArray();
+        //每个数据对应的最后出现的位置，从后面的数据中找出数据替换到前面
         for(int i = 0 ; i < chs.length ; i++) {
             count[(chs[i] - '0')] = i;
         }

@@ -22,7 +22,7 @@ public class ProducerAndConsumer {
         private void producer() {
             while (true) {
                 synchronized (queue) {
-                    while (queue.size() == MAX_LEN) {
+                    while (queue.size() > 0) {
                         queue.notify();
                         System.out.println("当前队列满");
                         try {

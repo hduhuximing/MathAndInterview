@@ -1,5 +1,7 @@
 package LeetCode;
 
+import java.util.Stack;
+
 /**
  * @author ming
  * @version 1.0
@@ -8,21 +10,37 @@ package LeetCode;
  */
 public class leetcode42 {
     public static int trap(int[] height) {
-        int left = 0;
-        int right = height.length - 1;
-        int leftMax = 0;
-        int rightMax = 0;
+//        int left = 0;
+//        int right = height.length - 1;
+//        int leftMax = 0;
+//        int rightMax = 0;
+//        int res = 0;
+//        while (left < right) {
+//            if (height[left] < height[right]) {
+//                leftMax = Math.max(leftMax, height[left]);
+//                res += leftMax - height[left];
+//                left++;
+//            } else {
+//                rightMax = Math.max(rightMax, height[right]);
+//                res += rightMax - height[right];
+//                right--;
+//            }
+//        }
+//        return res;
         int res = 0;
-        while (left < right) {
-            if (height[left] < height[right]) {
-                leftMax = Math.max(leftMax, height[left]);
-                res += leftMax - height[left];
-                left++;
-            } else {
-                rightMax = Math.max(rightMax, height[right]);
-                res += rightMax - height[right];
-                right--;
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < height.length; i++) {
+            while (!stack.isEmpty() && height[stack.peek()] < height[i]) {
+                int cur = stack.pop();
+                if (stack.isEmpty()) {
+                    break;
+                }
+                int l = stack.peek();
+                int r = i;
+                int h = Math.min(height[r], height[l]) - height[cur];
+                res += (r - l - 1) * h;
             }
+            stack.push(i);
         }
         return res;
     }

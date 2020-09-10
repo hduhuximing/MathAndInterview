@@ -17,7 +17,12 @@ package LeetCode;
  * 你算法的时间复杂度应该为 O(n2) 。
  */
 public class leetcode300 {
-    public int lengthOfLIS(int[] nums) {
+    public static void main(String[] args) {
+        int [] arr={1,4,2,3,5};
+        System.out.println(lengthOfLIS(arr));
+    }
+
+    public static int lengthOfLIS(int[] nums) {
         //判断是不是空
         //声明dp,当前位置最大的上升数
         //从头开始循环，每一个值初始值都是1
@@ -31,7 +36,7 @@ public class leetcode300 {
         }
         int[] dp = new int[nums.length];
         int max = 0;
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             dp[i] = 1;
             for (int j = 0; j < i; j++) {
                 if (nums[j] < nums[i]) {
