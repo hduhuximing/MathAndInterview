@@ -15,6 +15,7 @@ public class leetcode1171 {
         HashMap<Integer, ListNode> map = new HashMap<>();
         int sum = 0;
         head=dumy;
+        //求前缀和，后面的和覆盖前面的和
         while (head != null) {
             sum += head.val;
             map.put(sum, head);
@@ -25,8 +26,8 @@ public class leetcode1171 {
         while (head != null) {
             sum += head.val;
             ListNode node = map.get(sum);
+            //当前节点的下一个节点为跳过中间和为0的节点
             head.next = node.next;
-
             head = head.next;
         }
         return dumy.next;

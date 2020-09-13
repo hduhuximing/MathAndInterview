@@ -6,7 +6,7 @@ package LeetCode;
  * @date 2020/8/22 2:07 下午
  * @description
  */
-public class LIstNode430 {
+public class leetcode430 {
     class Node {
         public int val;
         public Node prev;
@@ -15,7 +15,6 @@ public class LIstNode430 {
     }
 
     Node pre = null;
-
     public Node flatten(Node head) {
         if (head == null) {
             return head;

@@ -11,7 +11,8 @@ public enum CountryEnum {
     Three(3, "qin"),
     Four(4, "zhao"),
     Five(5, "yan"),
-    Six(6, "han");
+    Six(6, "han"),
+    Seven(7, "aaa");
 
     private Integer code;
     private String country;

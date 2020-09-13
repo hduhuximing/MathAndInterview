@@ -47,21 +47,23 @@ public class LRUCache {
         DLinkedNode node = cache.get(key);
         //当前节点在不在，不在新建
         if (node == null) {
+            //长度增加
+            ++size;
+            //判断当前数据是否超过长度
+            DLinkedNode tail=null;
+            if (size > capacity) {
+                // pop the tail
+                tail = popTail();
+                cache.remove(tail.key);
+                --size;
+            }
             DLinkedNode newNode = new DLinkedNode();
             newNode.key = key;
             newNode.value = value;
             //添加到缓存
             cache.put(key, newNode);
             addNode(newNode);
-            //长度增加
-            ++size;
-            //判断当前数据是否超过长度
-            if (size > capacity) {
-                // pop the tail
-                DLinkedNode tail = popTail();
-                cache.remove(tail.key);
-                --size;
-            }
+
         } else {
             // update the value.
             node.value = value;

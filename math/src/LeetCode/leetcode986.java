@@ -17,7 +17,7 @@ public class leetcode986 {
         while (i < A.length && j < B.length) {
             int a = Math.max(A[i][0], B[j][0]);
             int b = Math.min(A[i][1], B[j][1]);
-            if (a <= b) {
+              if (a <= b) {
                 list.add(new int[]{a, b});
             }
             if (A[i][1] < B[j][1]) {

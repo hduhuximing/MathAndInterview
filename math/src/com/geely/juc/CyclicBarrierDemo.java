@@ -10,7 +10,7 @@ public class CyclicBarrierDemo {
 
     public static void cyclicBarrierTest() {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(7, () -> System.out.println("====召唤神龙====="));
-        for (int i = 1; i <= 7; i++) {
+        for (int i = 1; i <= 14; i++) {
             final int tempInt = i;
             new Thread(() -> {
                 System.out.println(Thread.currentThread().getName() + "\t收集到第" + tempInt + "颗龙珠");
