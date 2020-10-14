@@ -4,7 +4,7 @@ package offer;
  * @author ming
  * @version 1.0
  * @date 2020/9/12 8:31 下午
- * @description 中序 后续-》先序
+ * @description 中序 后序-》先序
  */
 public class midafter {
     static int postStack[] = {3, 4, 2, 6, 5, 1}; // 后序序列

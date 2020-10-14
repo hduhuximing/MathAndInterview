@@ -16,7 +16,6 @@ public class leetcode437 {
             this.val = val;
         }
     }
-
     public static int pathSum(TreeNode root, int sum) {
         return help(root, sum, new int[1000], 0);
     }
@@ -52,16 +51,16 @@ public class leetcode437 {
     }
 
     private int help1(TreeNode root, int sum) {
-        if(root==null){
+        if (root == null) {
             return 0;
         }
-        int val=root.val;
-        int count=0;
-        if(sum==val){
+        int val = root.val;
+        int count = 0;
+        if (sum == val) {
             count++;
         }
-        int left=help1(root.left,sum-val);
-        int right=help1(root.right,sum-val);
-        return left+right+count;
+        int left = help1(root.left, sum - val);
+        int right = help1(root.right, sum - val);
+        return left + right + count;
     }
 }

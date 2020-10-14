@@ -1,6 +1,7 @@
 package LeetCode;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 /**
  * @author ming
@@ -30,7 +31,7 @@ public class leetcode394 {
                 num.push(nu);
                 nu = 0;
             } else {
-                StringBuilder pre = new StringBuilder(str.poll());
+                StringBuilder pre = new StringBuilder(Objects.requireNonNull(str.poll()));
                 int N = num.pop();
                 for (int j = 0; j < N; j++) {
                     pre.append(curr);

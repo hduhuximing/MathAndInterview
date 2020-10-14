@@ -22,6 +22,8 @@ public class leetcode337 {
             return 0;
         }
         int[] res = help(root);
+        //res[0]选当前的数据
+        //res[1]不选当前的数据
         return Math.max(res[0], res[1]);
     }
 

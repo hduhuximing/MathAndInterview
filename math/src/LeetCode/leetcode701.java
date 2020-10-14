@@ -3,7 +3,7 @@ package LeetCode;
 /**
  * @author ming
  * @version 1.0
- * @date 2020/2/12 8:47 下午
+ * @date 2020/2/12 8:47 下午 二叉树插入
  * @description 给定二叉搜索树:
  * <p>
  * 4

@@ -4,7 +4,7 @@ package LeetCode;
  * @author ming
  * @version 1.0
  * @date 2020/2/12 6:54 下午
- * @description
+ * @description 二叉树删除一个节点
  */
 public class leetcode450 {
     class TreeNode {

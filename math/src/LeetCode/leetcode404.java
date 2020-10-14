@@ -23,9 +23,8 @@ public class leetcode404 {
         }
         if (isLeft(root.left)) {
             sum += root.left.val;
-        }else {
-            help(root.left);
         }
+        help(root.left);
         help(root.right);
     }
 

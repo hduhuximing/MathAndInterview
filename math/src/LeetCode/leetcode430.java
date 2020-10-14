@@ -15,6 +15,7 @@ public class leetcode430 {
     }
 
     Node pre = null;
+
     public Node flatten(Node head) {
         if (head == null) {
             return head;
