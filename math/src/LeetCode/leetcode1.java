@@ -48,12 +48,4 @@ public class leetcode1 {
         }
         return new int[]{-1, -1};
     }
-
-    public static void main(String[] args) {
-//        List<int[]> ints = twoSum6(new int[]{1, 4, 5, 3, 3, 6}, 9);
-//        for (int i = 0; i < ints.size(); i++) {
-//            String s = Arrays.toString(ints.get(i));
-//            System.out.println(s);
-//        }
-    }
 }
