@@ -9,11 +9,11 @@ package LeetCode;
 public class leetcode3 {
     public int lengthOfLongestSubstring(String s) {
         int i = 0, j = 0, max = 0;
-        int[] res = new int[256];
+        int[] num = new int[256];
         while (j < s.length()) {
-            i = Math.max(res[s.charAt(j)], i);
+            i = Math.max(i, num[s.charAt(j)]);
             max = Math.max(max, j - i + 1);
-            res[s.charAt(j)] = ++j;
+            num[s.charAt(j)] = ++j;
         }
         return max;
 

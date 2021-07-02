@@ -12,11 +12,9 @@ import java.util.concurrent.BlockingQueue;
  */
 class Producer implements Runnable {
     private final BlockingQueue<Integer> queue;
-
     public Producer(BlockingQueue q) {
         this.queue = q;
     }
-
     @Override
     public void run() {
         try {
@@ -36,15 +34,12 @@ class Producer implements Runnable {
     }
 }
 
-
 //消费者
 class Consumers implements Runnable {
     private BlockingQueue<Integer> queue;
-
     public Consumers(BlockingQueue q) {
         this.queue = q;
     }
-
     @Override
     public void run() {
         while (true) {
@@ -55,7 +50,6 @@ class Consumers implements Runnable {
             }
         }
     }
-
     private void consume(Integer n) {
         System.out.println("Thread:" + Thread.currentThread().getName() + " consume:" + n);
     }

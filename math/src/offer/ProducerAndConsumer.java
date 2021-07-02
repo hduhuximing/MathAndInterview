@@ -10,7 +10,6 @@ import java.util.Queue;
  * @description https://blog.csdn.net/zhengzhaoyang122/article/details/82079021
  */
 public class ProducerAndConsumer {
-    private final int MAX_LEN = 10;
     private Queue<Integer> queue = new LinkedList<>();
 
     class Producer extends Thread {
