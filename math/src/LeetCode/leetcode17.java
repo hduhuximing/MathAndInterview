@@ -41,7 +41,7 @@ public class leetcode17 {
         String letter = phone.get(curr);
         for (int i = 0; i < letter.length(); i++) {
             char c = letter.charAt(i);
-            help(curr + c, digits.substring(1));
+            help(s + c, digits.substring(1));
         }
     }
 }

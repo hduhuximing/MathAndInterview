@@ -11,9 +11,26 @@ public class KMP {
         String str1 = "BBC ABCDAB ABCDABCDABDE";
         String str2 = "ABCDABD";
 //String str2 = "BBC";
-        int[] next = kmpNext("ABCDABD");
+        int[] next = kmpNext(str2);
         int index = kmpSearch(str1, str2, next);
         System.out.println("index=" + index); // 15 了
+    }
+
+    private static int[] kmpNext(String s) {
+        int[] next = new int[s.length()];
+        int i = 1;
+        int j = 0;
+        while (i < s.length()) {
+            while (j > 0 && s.charAt(i) != s.charAt(j)) {
+                j = next[j - 1];
+            }
+            if (s.charAt(i) == s.charAt(j)) {
+                j++;
+            }
+            next[i] = j;
+            i++;
+        }
+        return next;
     }
 
     private static int kmpSearch(String s1, String s2, int[] next) {
@@ -34,21 +51,6 @@ public class KMP {
         return 0;
     }
 
-    private static int[] kmpNext(String s) {
-        int[] next = new int[s.length()];
-        int i = 1;
-        int j = 0;
-        while (i < s.length()) {
-            while (j > 0 && s.charAt(i) != s.charAt(j)) {
-                j = next[j - 1];
-            }
-            if (s.charAt(i) == s.charAt(j)) {
-                j++;
-            }
-            next[i] = j;
-            i++;
-        }
-        return next;
-    }
+
 }
 
