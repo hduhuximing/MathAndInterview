@@ -12,6 +12,9 @@ public class KMP {
         String str2 = "ABCDABD";
 //String str2 = "BBC";
         int[] next = kmpNext(str2);
+        for (int i : next) {
+            System.out.println(i);
+        }
         int index = kmpSearch(str1, str2, next);
         System.out.println("index=" + index); // 15 了
     }
