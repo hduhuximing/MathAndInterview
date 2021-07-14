@@ -1,6 +1,5 @@
 package LeetCode;
 
-import org.apache.commons.lang.StringUtils;
 
 /**
  * @author ming
@@ -35,9 +34,9 @@ public class leetcode16_11 {
      * @return
      */
     public static int ipToLong(String strIp) {
-        if (StringUtils.isBlank(strIp)) {
-            return 0;
-        }
+//        if (String..isBlank(strIp)) {
+//            return 0;
+//        }
         String[] ipArr = strIp.split("\\.");
         if (ipArr.length != 4) {
             return 0;

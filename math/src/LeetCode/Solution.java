@@ -21,8 +21,10 @@ public class Solution {
         }
     });
 
+
     public void Insert(Integer num) {
-        //偶数
+
+            //偶数
         if ((count & 1) == 0) {
             if (!maxHeap.isEmpty() && num < maxHeap.peek()) {
                 //最小
