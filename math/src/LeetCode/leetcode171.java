@@ -7,9 +7,6 @@ package LeetCode;
  * @description
  */
 public class leetcode171 {
-    public static void main(String[] args) {
-        System.out.println(4/5);
-    }
     public int titleToNumber(String s) {
         int res = 0;
         for (int i = 0; i < s.length(); i++) {
