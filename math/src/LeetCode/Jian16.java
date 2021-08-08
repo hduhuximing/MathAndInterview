@@ -13,7 +13,9 @@ public class Jian16 {
             x = 1 / x;
             n = -n;
         }
+        //将为奇数时多个那个x 直接乘到res中
         while (n != 0) {
+//            if((n&1)==1)
             if (n % 2 == 1) {
                 res *= x;
             }

@@ -8,9 +8,11 @@ package LeetCode;
  */
 public class Jian11 {
     public int minArray(int[] numbers) {
+        // 数组为空
         if (numbers == null || numbers.length == 0) {
             return 0;
         }
+        // 只有一个元素 或者 本来就有序
         if (numbers.length == 1 || numbers[0] < numbers[numbers.length - 1]) {
             return numbers[0];
         }

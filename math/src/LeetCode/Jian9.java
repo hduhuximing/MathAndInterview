@@ -14,13 +14,14 @@ public class Jian9 {
         Stack<Integer> stack2;
 
         public CQueue() {
-            stack1 = new Stack<Integer>();
-            stack2 = new Stack<Integer>();
+            stack1 = new Stack<>();
+            stack2 = new Stack<>();
         }
 
         public void appendTail(int value) {
             stack1.push(value);
         }
+
         //什么时候第二个为空了，才用第一个栈全出来加入第二个，最终结果从第二个栈中找
         public int deleteHead() {
             if (stack1.isEmpty() && stack2.isEmpty()) {

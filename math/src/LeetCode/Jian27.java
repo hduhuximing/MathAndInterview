@@ -11,15 +11,22 @@ public class Jian27 {
         if (root == null || (root.left == null && root.right == null)) {
             return root;
         }
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
-        if (root.left != null) {
-            mirrorTree(root.left);
-        }
-        if (root.right != null) {
-            mirrorTree(root.right);
-        }
+//        TreeNode temp = root.left;
+//        root.left = root.right;
+//        root.right = temp;
+//        if (root.left != null) {
+//            mirrorTree(root.left);
+//        }
+//        if (root.right != null) {
+//            mirrorTree(root.right);
+//        }
+//        return root;
+
+
+        TreeNode left = mirrorTree(root.left);
+        TreeNode right = mirrorTree(root.right);
+        root.left = right;
+        root.right = left;
         return root;
     }
 }

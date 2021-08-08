@@ -11,6 +11,7 @@ public class Jian17 {
         if (n < 0) {
             return new int[0];
         }
+        //先求10的n次方
         int base = 10;
         int res = 1;
         while (n != 0) {
@@ -20,6 +21,7 @@ public class Jian17 {
             base *= base;
             n /= 2;
         }
+        //正序输出
         int[] nums = new int[res - 1];
         int index = 0;
         while (index < res - 1) {
