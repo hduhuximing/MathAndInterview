@@ -16,6 +16,7 @@ public class Jian34 {
         return res;
     }
 
+    // 回溯
     public void help(List<List<Integer>> res, TreeNode root, int sum, ArrayList<Integer> list) {
         if (root == null) {
             return;
@@ -28,6 +29,7 @@ public class Jian34 {
             help(res, root.left, sum, list);
             help(res, root.right, sum, list);
         }
+
         list.remove(list.size() - 1);
     }
 }

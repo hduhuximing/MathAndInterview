@@ -22,8 +22,8 @@ public class Jian38 {
 
     private void help(char[] ch, int index) {
         if (index == ch.length) {
-            String str = new String(ch);
-            list.add(str);
+            String res = new String(ch);
+            list.add(res);
             return;
         }
         for (int i = index; i < ch.length; i++) {
@@ -34,6 +34,7 @@ public class Jian38 {
             }
         }
     }
+
 
     private boolean canSwap(char[] ch, int end, int start) {
         for (int j = start; j < end; j++) {

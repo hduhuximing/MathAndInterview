@@ -16,9 +16,9 @@ public class Jian31 {
         if (pushed.length != popped.length) {
             return false;
         }
-        Stack<Integer> stack = new Stack<>();
         int index = 0;
-        for (int i = 0; i < popped.length; i++) {
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < pushed.length; i++) {
             stack.push(pushed[i]);
             while (!stack.isEmpty() && stack.peek() == popped[index]) {
                 index++;
@@ -26,5 +26,17 @@ public class Jian31 {
             }
         }
         return stack.isEmpty();
+
+
+//        Stack<Integer> stack = new Stack<>();
+//        int index = 0;
+//        for (int i = 0; i < popped.length; i++) {
+//            stack.push(pushed[i]);
+//            while (!stack.isEmpty() && stack.peek() == popped[index]) {
+//                index++;
+//                stack.pop();
+//            }
+//        }
+//        return stack.isEmpty();
     }
 }

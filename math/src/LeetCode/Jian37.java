@@ -41,7 +41,7 @@ public class Jian37 {
         if (s.equals("null")) {
             return null;
         }
-        TreeNode root = new TreeNode(Integer.valueOf(s));
+        TreeNode root = new TreeNode(Integer.parseInt(s));
         root.left = helper(items);
         root.right = helper(items);
         return root;
