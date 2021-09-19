@@ -12,19 +12,12 @@ public class Jian47 {
             return 0;
         }
         int[] dp = new int[grid[0].length];
-        for (int i = 0; i < grid[0].length; i++) {
-            if (i == 0) {
-                dp[i] = grid[0][0];
-            } else {
-                dp[i] = grid[0][i] + dp[i - 1];
-            }
-        }
-        for (int i = 1; i < grid.length; i++) {
+        for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
                 if (j > 0) {
                     dp[j] = Math.max(dp[j], dp[j - 1]) + grid[i][j];
-                }else{
-                    dp[j]+=grid[i][0];
+                } else {
+                    dp[j] += grid[i][0];
                 }
             }
         }
