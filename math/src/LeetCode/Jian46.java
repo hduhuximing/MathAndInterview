@@ -8,17 +8,16 @@ package LeetCode;
  */
 public class Jian46 {
     public int translateNum(int num) {
-        String s = String.valueOf(num);
-        //c2 c1
-        int c1 = 1;
-        int c2 = 1;
-        for (int i = 1; i < s.length(); i++) {
-            int temp = c1;
-            if (s.charAt(i - 1) == '1' || (s.charAt(i - 1) == '2' && s.charAt(i) < '6')) {
-                c1+=c2;
+        String str = String.valueOf(num);
+        int pre = 1;
+        int curr = 1;
+        for (int i = 1; i < str.length(); i++) {
+            int temp = curr;
+            if (str.charAt(i - 1) == '1' || str.charAt(i - 1) == '2' && str.charAt(i) < '6') {
+                curr += pre;
             }
-            c2=temp;
+            pre = temp;
         }
-        return c1;
+        return curr;
     }
 }
