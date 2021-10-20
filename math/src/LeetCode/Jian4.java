@@ -9,8 +9,8 @@ package LeetCode;
 public class Jian4 {
 
 
-    public static void aaa(){
-        int aa=0;
+    public static void aaa() {
+        int aa = 0;
     }
 
     public boolean findNumberIn2DArray(int[][] matrix, int target) {

@@ -7,6 +7,7 @@ import java.util.Random;
  * @version 1.0
  * @date 2020/5/22 12:33 下午
  * @description 随机7 到 随机10
+ * https://leetcode-cn.com/problems/implement-rand10-using-rand7/solution/xiang-xi-si-lu-ji-you-hua-si-lu-fen-xi-zhu-xing-ji/
  */
 public class leetcode470 {
 

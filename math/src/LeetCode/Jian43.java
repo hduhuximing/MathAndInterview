@@ -4,7 +4,7 @@ package LeetCode;
  * @author ming
  * @version 1.0
  * @date 2020/8/20 11:18 上午
- * @description
+ * @description 1的个数，剥离高位
  */
 public class Jian43 {
     public int countDigitOne(int n) {
