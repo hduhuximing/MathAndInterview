@@ -17,18 +17,19 @@ public class Jian48 {
         int max = 0;
         String str = s.charAt(0) + "";
         for (int i = 0; i < len; i++) {
-            if(s.charAt(i)=='.'||s.charAt(i)=='!'){
+            if (s.charAt(i) == '.' || s.charAt(i) == '!') {
                 continue;
             }
-                pre = Math.max(pre, arr[s.charAt(i)]);
-                if (max < i - pre + 1) {
-                    max = i - pre + 1;
-                    str = s.substring(pre, i + 1);
-                }
-                max = Math.max(max, i - pre + 1);
-                arr[s.charAt(i)] = i + 1;
+            pre = Math.max(pre, arr[s.charAt(i)]);
+            if (max < i - pre + 1) {
+                max = i - pre + 1;
+                str = s.substring(pre, i + 1);
             }
-
+            max = Math.max(max, i - pre + 1);
+            arr[s.charAt(i)] = i + 1;
+        }
+        //打印最长的
+        System.out.println(str);
         return max;
     }
 }
