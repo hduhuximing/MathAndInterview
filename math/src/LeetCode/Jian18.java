@@ -11,8 +11,9 @@ public class Jian18 {
         while (head != null) {
             if (head.val == val) {
                 pre.next = head.next;
+            } else {
+                pre = head;
             }
-            pre = head;
             head = head.next;
         }
         return res.next;

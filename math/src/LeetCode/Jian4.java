@@ -7,12 +7,6 @@ package LeetCode;
  * @description
  */
 public class Jian4 {
-
-
-    public static void aaa() {
-        int aa = 0;
-    }
-
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
             return false;

@@ -13,13 +13,16 @@ public class Jian22 {
         }
         ListNode pre = head;
         int i = 0;
+        // 先走k步
         while (i < k) {
+            // 如果下一个是空的，直接返回首位
             if (pre.next == null) {
-                return head.next;
+                return head;
             }
             pre = pre.next;
             i++;
         }
+        // pre走到空
         while (pre != null) {
             pre = pre.next;
             head = head.next;

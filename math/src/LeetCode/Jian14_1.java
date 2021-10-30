@@ -11,12 +11,13 @@ public class Jian14_1 {
         if (n == 0 || n == 1) {
             return n;
         }
-        if (n == 2) {
-            return 1;
+        if (n == 2 || n == 3) {
+            return n - 1;
         }
-        if (n == 3) {
-            return 2;
-        }
+        /*
+          dp[i]长度为i时，最大的乘积 dp[i]=max(dp[i],dp[i-j]*dp[j])
+          j 是被分割的一部分长度，取值范围为1~i/2,因为大于i/2就重复了
+         */
         int[] dp = new int[n + 1];
         dp[1] = 1;
         dp[2] = 2;

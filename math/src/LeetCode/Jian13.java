@@ -12,13 +12,10 @@ public class Jian13 {
         boolean[] flag = new boolean[m * n];
         return help(flag, m, n, 0, 0, k);
     }
-
+    // m 总行数，n 总列数
     private int help(boolean[] flag, int m, int n, int i, int j, int k) {
         //跳出条件
-        if (i < 0 || j < 0 ||
-                i >= m || j >= n ||
-                flag[i * n + j] ||
-                check(i, j, k)) {
+        if (i < 0 || j < 0 || i >= m || j >= n || flag[i * n + j] || IsValid(i, j, k)) {
             return 0;
         }
         //本次是为了记录长度，不用回溯
@@ -30,7 +27,7 @@ public class Jian13 {
     }
 
     //检测是否符合需求
-    private boolean check(int i, int j, int k) {
+    private boolean IsValid(int i, int j, int k) {
         int sum = 0;
         while (i != 0) {
             sum += i % 10;

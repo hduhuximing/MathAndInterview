@@ -26,6 +26,11 @@ public class leetcode279 {
         if (n == 0) {
             return 0;
         }
+        /*
+          dp[i]代表i之前（包含i）的完全平方数，从1开始算
+          dp[i]=max(dp[i],dp[i-j*j]+1)
+          j*j一定是一个完全平方
+         */
         int[] dp = new int[n + 1];
         for (int i = 1; i <= n; i++) {
             //全1是最大的
