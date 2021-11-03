@@ -13,7 +13,7 @@ public class Jian33 {
         }
         return help(postorder, 0, postorder.length - 1);
     }
-
+    //先遍历找到第一个大于根节点的数据，他后面的数据也都应该大于跟
     private boolean help(int[] postorder, int start, int end) {
         if (start >= end) {
             return true;

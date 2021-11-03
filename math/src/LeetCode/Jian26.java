@@ -20,13 +20,9 @@ public class Jian26 {
         if (root2 == null) {
             return true;
         }
-        if (root1 == null) {
+        if (root1 == null || (root1.val != root2.val)) {
             return false;
         }
-        if (root1.val == root2.val) {
-            return isEquals(root1.left, root2.left) && isEquals(root1.right, root2.right);
-        } else {
-            return false;
-        }
+        return isEquals(root1.left, root2.left) && isEquals(root1.right, root2.right);
     }
 }

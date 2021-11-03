@@ -14,12 +14,15 @@ public class Jian21 {
         int i = 0;
         int j = nums.length - 1;
         while (i < j) {
+            //左边找到第一个偶数
             while (i < j && (nums[i] % 2 == 1)) {
                 i++;
             }
+            //右边找到第一个奇数
             while (i < j && (nums[j] % 2 == 0)) {
                 j--;
             }
+            //交换
             if (i < j) {
                 int temp = nums[i];
                 nums[i] = nums[j];
