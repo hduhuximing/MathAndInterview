@@ -44,4 +44,26 @@ public class Jian60 {
         }
         return res;
     }
+
+    public double[] twoSum1(int n) {
+        int[][] dp = new int[n + 1][6 * n + 1];
+        double[] res = new double[5 * n + 1];
+        double all = Math.pow(6, n);
+        for (int i = 1; i <= 6; i++) {
+            dp[1][i] = 1;
+        }
+        for (int i = 1; i <= 6; i++) {
+            for (int j = i; j <= 6 * n; j++) {
+                for (int k = 1; k <= 6; k++) {
+                    dp[i][j] = j > k ? dp[i - 1][j - k] : 0;
+                    if (i == n) {
+                        res[j - n] = dp[i][j] / all;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
+
 }

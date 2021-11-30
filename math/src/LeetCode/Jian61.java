@@ -15,7 +15,7 @@ public class Jian61 {
         if (numbers == null || numbers.length == 0) {
             return false;
         }
-        Arrays.sort(numbers);
+       Arrays.sort(numbers);
         for (int i = 0; i < numbers.length - 1; i++) {
             if (numbers[i] == 0) {
                 zero++;
