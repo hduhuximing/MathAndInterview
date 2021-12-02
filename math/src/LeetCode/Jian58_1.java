@@ -9,7 +9,7 @@ package LeetCode;
 public class Jian58_1 {
     public String reverseWords(String s) {
         s = s.trim();
-        if (s == null || s.length() == 0) {
+        if (s.length() == 0) {
             return s;
         }
         String[] slist = s.split(" ");
@@ -19,7 +19,7 @@ public class Jian58_1 {
             if (slist[i].equals("")) {
                 continue;
             }
-            str.append(slist[i] + " ");
+            str.append(slist[i]).append(" ");
         }
         return str.toString().trim();
     }

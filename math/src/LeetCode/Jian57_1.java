@@ -20,6 +20,7 @@ public class Jian57_1 {
                 return new int[]{nums[i], nums[j]};
             }
         }
+
         return new int[0];
     }
 }
