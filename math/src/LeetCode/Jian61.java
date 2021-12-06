@@ -28,4 +28,24 @@ public class Jian61 {
         }
         return interval <= zero;
     }
+
+    public boolean isStraight1(int[] numbers) {
+        int interval = 0;
+        int zeroNum = 0;
+        if (numbers == null || numbers.length == 0) {
+            return false;
+        }
+        Arrays.sort(numbers);
+        for (int i = 0; i < numbers.length - 1; i++) {
+            if (numbers[i] == 0) {
+                zeroNum++;
+                continue;
+            }
+            if (numbers[i + 1] == numbers[i]) {
+                return false;
+            }
+            interval += numbers[i + 1] - numbers[i] - 1;
+        }
+        return interval <= zeroNum;
+    }
 }

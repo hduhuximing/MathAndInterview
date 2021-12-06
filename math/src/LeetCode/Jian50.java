@@ -14,8 +14,9 @@ public class Jian50 {
             flag[strs[i]]++;
         }
         for (int i = 0; i < strs.length; i++) {
-            if(flag[strs[i]] == 1)
+            if (flag[strs[i]] == 1) {
                 return strs[i];
+            }
         }
         return ' ';
     }

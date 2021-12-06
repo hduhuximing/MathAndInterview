@@ -25,4 +25,22 @@ public class Jian65 {
         }
         return a;
     }
+
+
+    public int add1(int a, int b) {
+        int sum = 0;
+        int next = 0;
+        if (a == 0) {
+            return b;
+        } else if (b == 0) {
+            return a;
+        }
+        while (b != 0) {
+            sum = a ^ b;
+            next = (a & b) << 1;
+            a = sum;
+            b = next;
+        }
+        return sum;
+    }
 }

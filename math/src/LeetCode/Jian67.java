@@ -34,8 +34,7 @@ public class Jian67 {
             return Integer.MAX_VALUE;
         } else if (res * symbol <= Integer.MIN_VALUE) {
             return Integer.MIN_VALUE;
-        } else {
-            return (int) res * symbol;
         }
+        return (int) res * symbol;
     }
 }

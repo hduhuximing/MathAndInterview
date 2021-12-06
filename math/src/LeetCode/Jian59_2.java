@@ -10,7 +10,6 @@ import java.util.List;
  * @description
  */
 public class Jian59_2 {
-    private int index = 0;
     private List<Integer> deque = null;
     private List<Integer> queue = null;
 

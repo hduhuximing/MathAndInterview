@@ -10,6 +10,6 @@ public class Jian58_2 {
     public String reverseLeftWords(String s, int n) {
         StringBuilder str=new StringBuilder();
         str.append(s).append(s);
-        return str.toString().substring(n,n+s.length());
+        return str.substring(n,n+s.length());//包头不包尾
     }
 }
