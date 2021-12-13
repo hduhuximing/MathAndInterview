@@ -31,6 +31,8 @@ public class Jian33 {
                 return false;
             }
         }
+        //每次遍历都是拆分成左子树和右子树
+        //能走到这里证明前面的都过了
         return help(postorder, start, i - 1) && help(postorder, i, end - 1);
     }
 }
