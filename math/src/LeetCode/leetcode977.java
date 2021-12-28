@@ -9,19 +9,19 @@ package LeetCode;
 public class leetcode977 {
     public int[] sortedSquares(int[] A) {
         int len = A.length;
-        int[] arr = new int[len];
-        int i = 0;
-        int j = len - 1;
-        int index = len-1;
+        int[] arr = new int[A.length];
+        int start = 0;
+        int end = len - 1;
+        int index = A.length - 1;
         while (index >= 0) {
-            int left = A[i] * A[i];
-            int right = A[j] * A[j];
-            if (left > right) {
+            int left = A[start] * A[start];
+            int right = A[end] * A[end];
+            if (left >= right) {
                 arr[index--] = left;
-                i++;
+                start++;
             } else {
                 arr[index--] = right;
-                j--;
+                end--;
             }
         }
         return arr;
