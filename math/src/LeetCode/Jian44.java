@@ -14,6 +14,7 @@ public class Jian44 {
         int count = 0;
         int power = 1;
         while (true) {
+            //取当前位数对应的，每一位上的计数
             if (power == 1) {
                 count = 10;
             } else {

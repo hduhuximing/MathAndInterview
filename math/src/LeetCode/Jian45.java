@@ -18,7 +18,7 @@ public class Jian45 {
         for (int i = 0; i < n; i++) {
             strs[i] = String.valueOf(nums[i]);
         }
-        Arrays.sort(strs, (s1, s2) -> (s1 + s2).compareTo(s2 + s1));
+        Arrays.sort(strs, (o1, o2) -> (o1 + o2).compareTo(o2 + o1));
         StringBuilder sb = new StringBuilder();
         for (String str : strs) {
             sb.append(str);

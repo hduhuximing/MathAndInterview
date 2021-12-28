@@ -3,7 +3,6 @@ package LeetCode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * @author ming
@@ -38,23 +37,46 @@ public class Jian32_1 {
 
 
     public List<List<Integer>> levelOrder1(TreeNode root) {
-        List<List<Integer>> res=new ArrayList<>();
-        if(root==null){
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
             return res;
         }
-        help(res,root,0);
+        help(res, root, 0);
         return res;
     }
-    public void help(List<List<Integer>>res,TreeNode root,int level){
-        if(root==null){
-            return ;
+
+    public void help(List<List<Integer>> res, TreeNode root, int level) {
+        if (root == null) {
+            return;
         }
-        if(res.size()==level){
+        if (res.size() == level) {
             res.add(new ArrayList<>());
         }
+        //顺序添加即可
         res.get(level).add(root.val);
-        help(res,root.left,level+1);
-        help(res,root.right,level+1);
+        help(res, root.left, level + 1);
+        help(res, root.right, level + 1);
+    }
+
+
+    public int[] levelOrder111(TreeNode root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        if (root == null) {
+            return new int[0];
+        }
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.remove(0);
+            res.add(node.val);
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+        }
+        return res.stream().mapToInt(Integer::valueOf).toArray();
     }
 }
 

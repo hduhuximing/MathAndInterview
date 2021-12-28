@@ -11,7 +11,7 @@ public class Jian36 {
     Node pre = null;
     //首节点
     Node head = null;
-
+    //中序遍历，遍历操作中进行当前节点和前置节点的连接
     public Node treeToDoublyList(Node root) {
         if (root == null) {
             return root;
