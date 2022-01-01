@@ -40,10 +40,11 @@ public class leetcode4 {
                 two = nums2[bIndex++];
             }
         }
-
+        //偶数
         if ((sum & 1) == 0) {
             return (one + two) / 2.0;
         } else {
+            //奇数
             return two;
         }
     }
@@ -70,13 +71,13 @@ public class leetcode4 {
             } else if (i > iMax && A[i - 1] > B[j]) {
                 iMax--;
             } else {
-                int maxLeft=0;
-                if(i==0){
-                    maxLeft=B[j-1];
-                }else if(j==0){
-                    maxLeft=A[i-1];
-                }else{
-                    maxLeft=Math.max(A[i-1],B[j-1]);
+                int maxLeft = 0;
+                if (i == 0) {
+                    maxLeft = B[j - 1];
+                } else if (j == 0) {
+                    maxLeft = A[i - 1];
+                } else {
+                    maxLeft = Math.max(A[i - 1], B[j - 1]);
                 }
                 if ((m + n) % 2 == 1) {
                     return maxLeft;

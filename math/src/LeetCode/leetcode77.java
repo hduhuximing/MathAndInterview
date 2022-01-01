@@ -18,12 +18,12 @@ public class leetcode77 {
         return res;
     }
 
-    private void help(int first, int n, int k, List<Integer> list) {
+    private void help(int index, int n, int k, List<Integer> list) {
         if (list.size() == k) {
             res.add(new ArrayList<>(list));
             return;
         }
-        for (int i = first; i < n - (k - list.size()) + 1; i++) {
+        for (int i = index; i <= n - (k - list.size()) + 1; i++) {
             list.add(i);
             help(i + 1, n, k, list);
             list.remove(list.size() - 1);
