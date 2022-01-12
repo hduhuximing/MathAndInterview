@@ -14,7 +14,8 @@ public class leetcode703 {
 
     public leetcode703(int k, int[] nums) {
         this.k = k;
-        queue = new PriorityQueue<>(k, (o1, o2) -> o2 - o1);
+        //小顶堆，默认也是小顶堆
+        queue = new PriorityQueue<>(k, (o1, o2) -> o1 - o2);
         for (int i = 0; i < nums.length; i++) {
             add(nums[i]);
         }
