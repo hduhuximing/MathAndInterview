@@ -19,6 +19,7 @@ public class leetcode257 {
             this.val = val;
         }
     }
+
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> res = new ArrayList<>();
         if (root == null) {
@@ -32,7 +33,7 @@ public class leetcode257 {
         if (root == null) {
             return;
         }
-        curr += root.val;
+        curr += Integer.toString(root.val);
         if (root.left == null && root.right == null) {
             res.add(curr);
         } else {
@@ -40,6 +41,5 @@ public class leetcode257 {
             help(res, root.left, curr);
             help(res, root.right, curr);
         }
-
     }
 }

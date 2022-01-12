@@ -24,8 +24,7 @@ public class leetcode530 {
         }
         help(root.left);
         if (pre != null) {
-            int curr = Math.abs(root.val - pre.val);
-            min = Math.min(min, curr);
+            min = Math.min(min, Math.abs(root.val - pre.val));
         }
         pre = root;
         help(root.right);

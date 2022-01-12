@@ -1,5 +1,6 @@
 package LeetCode;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -46,5 +47,23 @@ public class leetcode589 {
             }
         }
         return output;
+    }
+
+
+    List<Integer> res = new ArrayList<>();
+
+    public List<Integer> preorder1(Node root) {
+        inOrder(root);
+        return res;
+    }
+
+    void inOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+        res.add(root.val);
+        for (int i = 0; i < root.children.size(); i++) {
+            inOrder(root.children.get(i));
+        }
     }
 }
