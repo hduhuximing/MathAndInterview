@@ -24,6 +24,5 @@ public class leetcode11 {
             }
         }
         return res;
-
     }
 }

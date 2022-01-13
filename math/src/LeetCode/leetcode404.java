@@ -17,6 +17,7 @@ public class leetcode404 {
         return sum;
     }
 
+    //从上一层的角度可以判断下一层的数据是否为最左
     private void help(TreeNode root) {
         if (root == null) {
             return;

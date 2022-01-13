@@ -25,9 +25,7 @@ public class leetcode501 {
             result[i] = list.get(i);
         }
         return result;
-
     }
-
     private void help(TreeNode root) {
         if (root == null) {
             return;
