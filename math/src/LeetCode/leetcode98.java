@@ -10,7 +10,7 @@ public class leetcode98 {
     public boolean isValidBST(TreeNode root) {
         return help(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
-
+    //透传其应该大于或者应该小于的数据
     private boolean help(TreeNode root, long minValue, long maxValue) {
         if (root == null) {
             return true;
@@ -18,7 +18,6 @@ public class leetcode98 {
         if (root.val <= minValue || root.val >= maxValue) {
             return false;
         }
-        return help(root.left, minValue, root.val)
-                && help(root.right, root.val, maxValue);
+        return help(root.left, minValue, root.val) && help(root.right, root.val, maxValue);
     }
 }

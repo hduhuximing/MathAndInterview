@@ -29,6 +29,7 @@ public class leetcode46 {
             res.add(new ArrayList<>(list));
             return;
         }
+        // 从当前index开始，每个数据和index位置数据交换
         for (int i = index; i < len; i++) {
             Collections.swap(list, i, index);
             help(len, res, list, index + 1);

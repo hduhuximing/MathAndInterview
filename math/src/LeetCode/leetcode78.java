@@ -16,7 +16,7 @@ public class leetcode78 {
         if (nums == null || nums.length == 0) {
             return res;
         }
-        help(nums, 0, new ArrayList<Integer>());
+        help(nums, 0, new ArrayList<>());
         return res;
     }
 

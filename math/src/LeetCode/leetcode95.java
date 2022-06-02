@@ -50,4 +50,33 @@ public class leetcode95 {
         }
         return cur;
     }
+
+    public List<TreeNode> generateTrees1(int n) {
+        if (n == 0) {
+            return new ArrayList<>();
+        }
+        return generateTree1(1, n);
+    }
+
+    public List<TreeNode> generateTree1(int start, int end) {
+        List<TreeNode> res = new ArrayList<>();
+        if (start > end) {
+            res.add(null);
+            return res;
+        }
+        for (int i = start; i <= end; i++) {
+            List<TreeNode> leftTree = generateTree1(start, i - 1);
+            List<TreeNode> rightTree = generateTree1(i + 1, end);
+            for (TreeNode le : leftTree) {
+                for (TreeNode ri : rightTree) {
+                    TreeNode root = new TreeNode(i);
+                    root.left = le;
+                    root.right = ri;
+                    res.add(root);
+                }
+            }
+        }
+        return res;
+    }
+
 }

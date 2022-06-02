@@ -8,23 +8,23 @@ package LeetCode;
  */
 public class leetcode61 {
     public ListNode rotateRight(ListNode head, int k) {
-        if(head==null||head.next==null){
+        if (head == null || head.next == null) {
             return head;
         }
-        ListNode res=head;
+        ListNode res = head;
         //求出长度，编程循环， 从头开始线下找找到位置
-        int len=1;
-        while(res.next!=null){
-            res=res.next;
+        int len = 1;
+        while (res.next != null) {
+            res = res.next;
             len++;
         }
-        res.next=head;
-        for (int i = 1; i <len-k%len ; i++) {
-            head=head.next;
+        res.next = head;
+        for (int i = 1; i < len - k % len; i++) {
+            head = head.next;
         }
 
-        ListNode first=head.next;
-        head.next=null;
+        ListNode first = head.next;
+        head.next = null;
         return first;
     }
 }
