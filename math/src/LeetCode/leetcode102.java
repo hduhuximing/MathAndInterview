@@ -8,7 +8,7 @@ import java.util.List;
  * @author ming
  * @version 1.0
  * @date 2020/8/17 3:36 下午
- * @description
+ * @description 层次遍历 根左右
  */
 public class leetcode102 {
     List<List<Integer>> list = new LinkedList<>();
@@ -32,6 +32,20 @@ public class leetcode102 {
         help(root.left, level + 1);
         help(root.right, level + 1);
     }
+
+
+    private void help1(TreeNode root, int level) {
+        if (root == null) {
+            return;
+        }
+        if (list.size() == level) {
+            list.add(new ArrayList<>());
+        }
+        list.get(level).add(root.val);
+        help1(root.left, level + 1);
+        help1(root.right, level + 1);
+    }
+
 
     public List<List<Integer>> levelOrder1(TreeNode root) {
         if (root == null) {

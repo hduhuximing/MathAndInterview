@@ -12,9 +12,9 @@ package LeetCode;
 public class Jian10_2 {
     public int numWays(int n) {
         if (n == 0 || n == 1) {
-            return 0;
+            return 1;
         }
-        long pre = 0;
+        long pre = 1;
         long curr = 1;
         for (int i = 2; i <= n; i++) {
             long temp = curr;

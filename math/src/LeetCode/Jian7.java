@@ -30,4 +30,27 @@ public class Jian7 {
         root.right = recTree(pre, index - startIn + startPre + 1, endPre, index + 1, endIn, map);
         return root;
     }
+
+
+    public TreeNode buildTree1(int[] preorder, int[] inorder) {
+        if (preorder == null || preorder.length == 0) {
+            return null;
+        }
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+        return recTree1(preorder, 0, preorder.length - 1, 0, inorder.length - 1, map);
+    }
+
+    public TreeNode recTree1(int[] pre, int startPre, int endPre, int startIn, int endIn, HashMap<Integer, Integer> map) {
+        if (startPre > endPre || startIn > endIn) {
+            return null;
+        }
+        TreeNode root = new TreeNode(pre[startPre]);
+        int index = map.get(root.val);
+        root.left = recTree1(pre, startPre + 1, index - startIn + startPre, startIn, index - 1, map);
+        root.right = recTree1(pre, index - startIn + startPre + 1, endPre, index + 1, endIn, map);
+        return root;
+    }
 }

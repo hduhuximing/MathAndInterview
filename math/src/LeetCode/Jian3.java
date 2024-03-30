@@ -11,7 +11,6 @@ public class Jian3 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int res = -1;
         for (int i = 0; i < nums.length; i++) {
             while (i != nums[i]) {
                 if (nums[i] == nums[nums[i]]) {
@@ -22,6 +21,6 @@ public class Jian3 {
                 nums[temp] = temp;
             }
         }
-        return res;
+        return -1;
     }
 }

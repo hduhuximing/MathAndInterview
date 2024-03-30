@@ -24,4 +24,22 @@ public class Jian6 {
         }
         return arr;
     }
+
+    public int[] reversePrint1(ListNode head) {
+        if (head == null) {
+            return new int[]{};
+        }
+        ListNode temp = head;
+        int index = 1;
+        while (temp.next != null) {
+            temp = temp.next;
+            index++;
+        }
+        int[] res = new int[index];
+        for (int i = res.length - 1; i >= 0; i--) {
+            res[i] = head.val;
+            head = head.next;
+        }
+        return res;
+    }
 }
